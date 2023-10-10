@@ -1,13 +1,15 @@
 extends CharacterBody3D
 
-@export var speed = 5.0
+@export var speed = 10.0
 @export var acceleration = 4.0
 @export var jump_speed = 8.0
+@export var rotation_speed = 5.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 @onready var spring_arm = $SpringArm3D
+@onready var model = $KnightBlue
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -18,28 +20,23 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_speed
 		
+	# Handle rotation based on input.
+	var input_dir = Input.get_vector("left", "right", "forward", "back")
+	# Rotate the player left or right
+	if input_dir.x != 0:
+		model.rotation.y += input_dir.x * rotation_speed * delta
+
 	handle_movement_input(delta)
-	###
-	#if direction:
-	#	velocity.x = direction.x * SPEED
-	#	velocity.z = direction.z * SPEED
-	#else:
-	#	velocity.x = move_toward(velocity.x, 0, SPEED)
-	#	velocity.z = move_toward(velocity.z, 0, SPEED)
-	###
 	move_and_slide()
 
 func handle_movement_input(delta):
-	
 	# Get the input direction and handle the movement/deceleration.
 	var input_dir = Input.get_vector("left", "right", "forward", "back")
-	var direction = Vector3(input_dir.x, 0, input_dir.y).rotated(Vector3.UP, spring_arm.rotation.y)
+
+	# Calculate the movement direction based on player's rotation
+	var direction = Vector3(0, 0, 1).rotated(Vector3.UP, model.rotation.y)
 	
+	# Adjust the velocity based on the input
 	var velocity_y = velocity.y;
-	velocity = lerp(velocity, direction * speed, acceleration * delta)
+	velocity = lerp(velocity, direction * input_dir.y * speed, acceleration * delta)
 	velocity.y = velocity_y
-	
-
-func jump():
-	gravity = -jump_speed
-
