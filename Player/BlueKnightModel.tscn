@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyyt80qovpr4b"]
+
+[ext_resource type="PackedScene" uid="uid://dty20qc7eewn8" path="res://Assets/Models/knightBlue.fbx" id="1_lka02"]
+
+[node name="knightBlue" instance=ExtResource("1_lka02")]
+
+[node name="knightBlue_8angles" parent="RootNode" index="0"]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
