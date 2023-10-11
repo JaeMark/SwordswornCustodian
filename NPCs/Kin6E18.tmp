@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cs5e14efng25y"]
+[gd_scene load_steps=8 format=3 uid="uid://cs5e14efng25y"]
 
 [ext_resource type="ArrayMesh" uid="uid://dc4k7v5onivmm" path="res://Assets/Models/king.obj" id="1_fi1i6"]
 [ext_resource type="Script" path="res://Scripts/KingController.gd" id="1_wpit4"]
 [ext_resource type="PackedScene" uid="uid://dp3r4qrafhli6" path="res://HUD/KingRequest.tscn" id="2_3yhad"]
+[ext_resource type="Script" path="res://Scripts/KingRequest.gd" id="4_kj603"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k5ekd"]
 size = Vector3(10, 5.17716, 10)
@@ -16,6 +17,9 @@ height = 6.0
 
 [node name="King" type="RigidBody3D"]
 script = ExtResource("1_wpit4")
+required_blue_shield = null
+required_red_shield = null
+required_sword = null
 
 [node name="KingMesh" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_fi1i6")
@@ -34,6 +38,7 @@ texture = SubResource("ViewportTexture_i1177")
 transparent_bg = true
 
 [node name="KingRequestUI" parent="SubViewport" instance=ExtResource("2_3yhad")]
+script = ExtResource("4_kj603")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7, 0)

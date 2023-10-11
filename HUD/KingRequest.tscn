@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dp3r4qrafhli6"]
+[gd_scene load_steps=6 format=3 uid="uid://dp3r4qrafhli6"]
 
+[ext_resource type="Script" path="res://Scripts/KingRequest.gd" id="1_yfalw"]
 [ext_resource type="Texture2D" uid="uid://duem6v45d8rbv" path="res://Assets/UI/shieldBlue_SE.png" id="2_ho42j"]
 [ext_resource type="LabelSettings" uid="uid://4b0bvwfj2w2" path="res://HUD/Hud.tres" id="3_de53q"]
 [ext_resource type="Texture2D" uid="uid://m52jtbw1njtc" path="res://Assets/UI/shieldRed_SE.png" id="4_tygxa"]
@@ -15,6 +16,7 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.99266, 1)
+script = ExtResource("1_yfalw")
 
 [node name="BlueShield" type="TextureRect" parent="."]
 layout_mode = 1
