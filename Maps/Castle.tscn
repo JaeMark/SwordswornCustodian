@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cot8b6v6337jx" path="res://Collectables/BlueShield.tscn" id="3_ynq0x"]
 [ext_resource type="PackedScene" uid="uid://djdmk3cti26d8" path="res://Collectables/RedShield.tscn" id="4_d36h0"]
 [ext_resource type="PackedScene" uid="uid://dwc32eg7otd3g" path="res://HUD/Hud.tscn" id="5_ptwgn"]
-[ext_resource type="PackedScene" uid="uid://cs5e14efng25y" path="res://NPCs/King.tscn" id="6_q4acm"]
+[ext_resource type="PackedScene" uid="uid://cs5e14efng25y" path="res://NPCs/King.tscn" id="6_mk4aw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_og2ie"]
 size = Vector3(100, 1, 100)
@@ -51,7 +51,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.20459, 2.19574, -11.4396)
 [node name="RedShield3" parent="." instance=ExtResource("4_d36h0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.74749, 2.19574, -17.4566)
 
-[node name="King" parent="." instance=ExtResource("6_q4acm")]
-transform = Transform3D(-0.817798, 0, -0.575505, 0, 1, 0, 0.575505, 0, -0.817798, -18.8599, 1.46631, -22.3585)
+[node name="King" parent="." instance=ExtResource("6_mk4aw")]
+transform = Transform3D(-0.734512, 0, -0.678596, 0, 1, 0, 0.678596, 0, -0.734512, -26.3487, 1.38465, -25.337)
 
 [connection signal="collectable_collected" from="Player" to="Hud" method="_on_player_collectable_collected"]

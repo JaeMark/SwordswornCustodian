@@ -3,23 +3,19 @@
 [ext_resource type="ArrayMesh" uid="uid://dc4k7v5onivmm" path="res://Assets/Models/king.obj" id="1_fi1i6"]
 [ext_resource type="PackedScene" uid="uid://dp3r4qrafhli6" path="res://HUD/KingRequest.tscn" id="2_3yhad"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r5v3j"]
-radius = 2.0
-height = 6.5
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_k5ekd"]
 size = Vector3(10, 5.17716, 10)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_i1177"]
 viewport_path = NodePath("SubViewport")
 
-[node name="King" type="CharacterBody3D"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yuufh"]
+radius = 2.5
+height = 6.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.10866, 0)
-shape = SubResource("CapsuleShape3D_r5v3j")
+[node name="King" type="RigidBody3D"]
 
-[node name="King" type="MeshInstance3D" parent="."]
+[node name="KingMesh" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_fi1i6")
 
 [node name="Area3D" type="Area3D" parent="."]
@@ -36,3 +32,7 @@ texture = SubResource("ViewportTexture_i1177")
 transparent_bg = true
 
 [node name="KingRequestUI" parent="SubViewport" instance=ExtResource("2_3yhad")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7, 0)
+shape = SubResource("CapsuleShape3D_yuufh")
