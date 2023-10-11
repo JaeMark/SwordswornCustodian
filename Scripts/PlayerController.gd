@@ -1,10 +1,10 @@
 extends CharacterBody3D
 
-@export var speed = 10.0
-@export var acceleration = 4.0
-@export var jump_speed = 8.0
-@export var rotation_speed = 5.0
-@export var camera_lag = 0.1 # Adjust this value to control the camera lag
+@export var speed : = 10.0
+@export var acceleration : = 4.0
+@export var jump_speed : = 8.0
+@export var rotation_speed : = 5.0
+@export var camera_lag : = 0.1 # Adjust this value to control the camera lag
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -29,8 +29,8 @@ func _physics_process(delta):
 
 	# Rotate the player left or right
 	if input_dir.x != 0:
-		model.rotation.y += input_dir.x * rotation_speed * delta
-		target_spring_rotation += input_dir.x * rotation_speed * delta
+		model.rotation.y -= input_dir.x * rotation_speed * delta # <- Changed the sign here
+		target_spring_rotation -= input_dir.x * rotation_speed * delta # <- Changed the sign here
 
 	spring_arm.rotation.y = lerp_angle(spring_arm.rotation.y, target_spring_rotation, camera_lag)
 
