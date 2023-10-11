@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dyh3wo7o1f6dv"]
+
+[node name="Collectable" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
