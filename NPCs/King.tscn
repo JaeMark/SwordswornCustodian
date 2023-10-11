@@ -10,7 +10,7 @@ height = 6.5
 [sub_resource type="BoxShape3D" id="BoxShape3D_k5ekd"]
 size = Vector3(10, 5.17716, 10)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_cltvn"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_i1177"]
 viewport_path = NodePath("SubViewport")
 
 [node name="King" type="CharacterBody3D"]
@@ -30,9 +30,9 @@ shape = SubResource("BoxShape3D_k5ekd")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(-3, 0, -4.52987e-07, 0, 3, 0, 4.52987e-07, 0, -3, 0, 6.52635, 0)
-texture = SubResource("ViewportTexture_cltvn")
+texture = SubResource("ViewportTexture_i1177")
 
 [node name="SubViewport" type="SubViewport" parent="."]
 transparent_bg = true
 
-[node name="Hud" parent="SubViewport" instance=ExtResource("2_3yhad")]
+[node name="KingRequestUI" parent="SubViewport" instance=ExtResource("2_3yhad")]

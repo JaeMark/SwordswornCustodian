@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://m52jtbw1njtc" path="res://Assets/UI/shieldRed_SE.png" id="4_tygxa"]
 [ext_resource type="Texture2D" uid="uid://bbn0tqtstktu2" path="res://Assets/UI/sword_SE.png" id="5_qjktl"]
 
-[node name="Hud" type="Control"]
+[node name="KingRequestUI" type="Control"]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
