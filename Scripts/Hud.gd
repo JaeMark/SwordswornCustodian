@@ -5,7 +5,6 @@ extends CanvasLayer
 @onready var sword_text = $Sword/SwordCount
 
 func _on_player_collectable_collected(collectbaleType, num_collected):
-	print("UI update")
 	match collectbaleType:
 		Collectable.CollectableType.BlueShield:
 			blue_shield_text.text = str(num_collected)

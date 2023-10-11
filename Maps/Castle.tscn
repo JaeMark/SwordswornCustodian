@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bigohgss0sb1m"]
+[gd_scene load_steps=9 format=3 uid="uid://bigohgss0sb1m"]
 
 [ext_resource type="PackedScene" uid="uid://chordaknnkt4w" path="res://Player/Player.tscn" id="1_q2bx6"]
 [ext_resource type="PackedScene" uid="uid://2nomv2ixafjf" path="res://Collectables/Sword.tscn" id="2_mr0f7"]
 [ext_resource type="PackedScene" uid="uid://cot8b6v6337jx" path="res://Collectables/BlueShield.tscn" id="3_ynq0x"]
 [ext_resource type="PackedScene" uid="uid://djdmk3cti26d8" path="res://Collectables/RedShield.tscn" id="4_d36h0"]
 [ext_resource type="PackedScene" uid="uid://dwc32eg7otd3g" path="res://HUD/Hud.tscn" id="5_ptwgn"]
+[ext_resource type="PackedScene" uid="uid://cs5e14efng25y" path="res://NPCs/King.tscn" id="6_q4acm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_og2ie"]
 size = Vector3(100, 1, 100)
@@ -31,17 +32,26 @@ transform = Transform3D(-0.422618, -0.694272, 0.582563, 0, 0.642788, 0.766044, -
 shadow_enabled = true
 shadow_opacity = 0.75
 
-[node name="Collectable" parent="." instance=ExtResource("2_mr0f7")]
+[node name="Sword" parent="." instance=ExtResource("2_mr0f7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.53409, 1.35749, -13.9399)
 collision_mask = 3
 
-[node name="Collectable2" parent="." instance=ExtResource("3_ynq0x")]
+[node name="BlueShield" parent="." instance=ExtResource("3_ynq0x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9033, 2.24528, -10.4233)
 collision_mask = 3
 
 [node name="Hud" parent="." instance=ExtResource("5_ptwgn")]
 
-[node name="Collectable3" parent="." instance=ExtResource("4_d36h0")]
+[node name="RedShield" parent="." instance=ExtResource("4_d36h0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.74749, 2.19574, -11.4396)
+
+[node name="RedShield2" parent="." instance=ExtResource("4_d36h0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.20459, 2.19574, -11.4396)
+
+[node name="RedShield3" parent="." instance=ExtResource("4_d36h0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.74749, 2.19574, -17.4566)
+
+[node name="King" parent="." instance=ExtResource("6_q4acm")]
+transform = Transform3D(-0.817798, 0, -0.575505, 0, 1, 0, 0.575505, 0, -0.817798, -18.8599, 1.46631, -22.3585)
 
 [connection signal="collectable_collected" from="Player" to="Hud" method="_on_player_collectable_collected"]

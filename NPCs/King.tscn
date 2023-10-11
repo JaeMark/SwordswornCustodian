@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://cs5e14efng25y"]
+
+[ext_resource type="ArrayMesh" uid="uid://dc4k7v5onivmm" path="res://Assets/Models/king.obj" id="1_fi1i6"]
+[ext_resource type="PackedScene" uid="uid://dp3r4qrafhli6" path="res://HUD/KingRequest.tscn" id="2_3yhad"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r5v3j"]
+radius = 2.0
+height = 6.5
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k5ekd"]
+size = Vector3(10, 5.17716, 10)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_cltvn"]
+viewport_path = NodePath("SubViewport")
+
+[node name="King" type="CharacterBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.10866, 0)
+shape = SubResource("CapsuleShape3D_r5v3j")
+
+[node name="King" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_fi1i6")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="InteractionCollider" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.06598, -3.81405)
+shape = SubResource("BoxShape3D_k5ekd")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(-3, 0, -4.52987e-07, 0, 3, 0, 4.52987e-07, 0, -3, 0, 6.52635, 0)
+texture = SubResource("ViewportTexture_cltvn")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+
+[node name="Hud" parent="SubViewport" instance=ExtResource("2_3yhad")]
