@@ -1,8 +1,8 @@
 extends CharacterBody3D
 
-@export var speed = 10.0
-@export var acceleration = 4.0
-@export var jump_speed = 12.0
+@export var speed = 20.0
+@export var acceleration = 5.0
+@export var jump_speed = 10.0
 @export var max_jump_height = 5.0 
 @export var rotation_speed = 3.0
 @export var camera_lag = 0.1
@@ -16,6 +16,10 @@ var target_rotation = 0.0
 var target_spring_rotation = 0.0
 var jump_start_height = 0.0
 var is_jumping = false
+
+var blue_shield_collected = 0
+var red_shield_collected = 0
+var sword_collected = 0
 
 func _physics_process(delta):
 	if not is_on_floor() and not is_jumping:
@@ -53,3 +57,12 @@ func handle_movement_input(delta):
 	var velocity_y = velocity.y;
 	velocity = lerp(velocity, direction * input_dir.y * speed, acceleration * delta)
 	velocity.y = velocity_y
+
+func on_collect_collectable(collectableType : Collectable.CollectableType):
+	match collectableType:
+		Collectable.CollectableType.BlueShield:
+			print("Collected blue shield!")
+		Collectable.CollectableType.RedShield:
+			print("Collected red shield!")
+		Collectable.CollectableType.Sword:
+			print("Collected sword!")

@@ -13,10 +13,16 @@ enum CollectableType {
 	Sword
 }
 
-func _on_body_entered(body):
-	self.queue_free()
+var is_collected := false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	rotate_y(rotation_speed * delta) # Rotation
 
+func _on_body_entered(body):
+	print("Collected!")
+	if body.is_in_group("Player"):
+		body.on_collect_collectable(collectableType)
+		
+		self.queue_free()
+		is_collected = true;

@@ -7,12 +7,11 @@
 radius = 2.0
 height = 6.5
 
-[node name="Player" type="CharacterBody3D"]
-collision_layer = 3
+[node name="Player" type="CharacterBody3D" groups=["Player"]]
 script = ExtResource("1_dpykx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.10866, 0)
 shape = SubResource("CapsuleShape3D_6fyx4")
 
 [node name="KnightBlue" type="MeshInstance3D" parent="."]
