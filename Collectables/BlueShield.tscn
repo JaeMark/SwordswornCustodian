@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dyh3wo7o1f6dv" path="res://Collectables/Colllectable.tscn" id="1_7k5d5"]
 [ext_resource type="ArrayMesh" uid="uid://ccc8k7b476btv" path="res://Assets/Models/shieldBlue.obj" id="2_mlx4p"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_87scq"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_ab178"]
 size = Vector3(2.6, 2.7, 1)
 
 [node name="Collectable" instance=ExtResource("1_7k5d5")]
@@ -11,5 +11,5 @@ size = Vector3(2.6, 2.7, 1)
 [node name="MeshInstance3D" parent="." index="0"]
 mesh = ExtResource("2_mlx4p")
 
-[node name="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" index="0"]
-shape = SubResource("BoxShape3D_87scq")
+[node name="CollisionShape3D" parent="." index="1"]
+shape = SubResource("BoxShape3D_ab178")

@@ -3,14 +3,14 @@
 [ext_resource type="PackedScene" uid="uid://dyh3wo7o1f6dv" path="res://Collectables/Colllectable.tscn" id="1_rwyna"]
 [ext_resource type="ArrayMesh" uid="uid://c02h2skhc78p3" path="res://Assets/Models/sword.obj" id="2_ve14m"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_k24pb"]
-size = Vector3(1, 3.7, 1)
+[sub_resource type="BoxShape3D" id="BoxShape3D_tw8rb"]
+size = Vector3(1, 3.75, 1)
 
 [node name="Collectable" instance=ExtResource("1_rwyna")]
 
 [node name="MeshInstance3D" parent="." index="0"]
 mesh = ExtResource("2_ve14m")
 
-[node name="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.16026, 0)
-shape = SubResource("BoxShape3D_k24pb")
+[node name="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14745, 0)
+shape = SubResource("BoxShape3D_tw8rb")

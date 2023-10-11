@@ -1,6 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bigohgss0sb1m"]
+[gd_scene load_steps=7 format=3 uid="uid://bigohgss0sb1m"]
 
 [ext_resource type="PackedScene" uid="uid://chordaknnkt4w" path="res://Player/Player.tscn" id="1_q2bx6"]
+[ext_resource type="PackedScene" uid="uid://2nomv2ixafjf" path="res://Collectables/Sword.tscn" id="2_mr0f7"]
+[ext_resource type="PackedScene" uid="uid://cot8b6v6337jx" path="res://Collectables/BlueShield.tscn" id="3_ynq0x"]
+[ext_resource type="PackedScene" uid="uid://28uw4na4udj0" path="res://Collectables/RedShield.tscn" id="4_d36h0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_og2ie"]
 size = Vector3(100, 1, 100)
@@ -26,3 +29,14 @@ mesh = SubResource("BoxMesh_n541q")
 transform = Transform3D(-0.422618, -0.694272, 0.582563, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 0, 0)
 shadow_enabled = true
 shadow_opacity = 0.75
+
+[node name="Collectable" parent="." instance=ExtResource("2_mr0f7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.53409, 1.35749, -13.9399)
+collision_mask = 3
+
+[node name="Collectable2" parent="." instance=ExtResource("3_ynq0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9033, 2.24528, -10.4233)
+collision_mask = 3
+
+[node name="Collectable3" parent="." instance=ExtResource("4_d36h0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.31428, 2.04095, -13.5019)

@@ -1,9 +1,11 @@
-[gd_scene format=3 uid="uid://dyh3wo7o1f6dv"]
+[gd_scene load_steps=2 format=3 uid="uid://dyh3wo7o1f6dv"]
 
-[node name="Collectable" type="Node3D"]
+[ext_resource type="Script" path="res://Scripts/Colllectable.gd" id="1_j37h5"]
+
+[node name="Collectable" type="Area3D"]
+collision_mask = 2
+script = ExtResource("1_j37h5")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
