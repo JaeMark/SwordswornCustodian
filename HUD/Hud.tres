@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://4b0bvwfj2w2"]
+
+[ext_resource type="FontFile" uid="uid://d0cxd77jybrcn" path="res://Fonts/lilita_one_regular.ttf" id="1_323bf"]
+
+[resource]
+font = ExtResource("1_323bf")
+font_size = 30
+shadow_offset = Vector2(2, 2)

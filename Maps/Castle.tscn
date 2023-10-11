@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bigohgss0sb1m"]
+[gd_scene load_steps=8 format=3 uid="uid://bigohgss0sb1m"]
 
 [ext_resource type="PackedScene" uid="uid://chordaknnkt4w" path="res://Player/Player.tscn" id="1_q2bx6"]
 [ext_resource type="PackedScene" uid="uid://2nomv2ixafjf" path="res://Collectables/Sword.tscn" id="2_mr0f7"]
 [ext_resource type="PackedScene" uid="uid://cot8b6v6337jx" path="res://Collectables/BlueShield.tscn" id="3_ynq0x"]
 [ext_resource type="PackedScene" uid="uid://28uw4na4udj0" path="res://Collectables/RedShield.tscn" id="4_d36h0"]
+[ext_resource type="PackedScene" uid="uid://dwc32eg7otd3g" path="res://HUD/Hud.tscn" id="5_ptwgn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_og2ie"]
 size = Vector3(100, 1, 100)
@@ -40,3 +41,5 @@ collision_mask = 3
 
 [node name="Collectable3" parent="." instance=ExtResource("4_d36h0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.31428, 2.04095, -13.5019)
+
+[node name="Hud" parent="." instance=ExtResource("5_ptwgn")]
