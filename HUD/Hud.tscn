@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwc32eg7otd3g"]
+[gd_scene load_steps=6 format=3 uid="uid://dwc32eg7otd3g"]
 
 [ext_resource type="Texture2D" uid="uid://duem6v45d8rbv" path="res://Assets/UI/shieldBlue_SE.png" id="1_a05ew"]
+[ext_resource type="Script" path="res://Scripts/Hud.gd" id="1_byhoh"]
 [ext_resource type="LabelSettings" uid="uid://4b0bvwfj2w2" path="res://HUD/Hud.tres" id="2_j2yqt"]
 [ext_resource type="Texture2D" uid="uid://m52jtbw1njtc" path="res://Assets/UI/shieldRed_SE.png" id="3_15ck5"]
 [ext_resource type="Texture2D" uid="uid://bbn0tqtstktu2" path="res://Assets/UI/sword_SE.png" id="4_cncrq"]
 
 [node name="Hud" type="CanvasLayer"]
+script = ExtResource("1_byhoh")
 
 [node name="BlueShield" type="TextureRect" parent="."]
 offset_left = 4.0
@@ -42,6 +44,7 @@ texture = ExtResource("3_15ck5")
 stretch_mode = 3
 
 [node name="x" type="Label" parent="RedShield"]
+layout_mode = 0
 offset_left = 42.0
 offset_top = 2.0
 offset_right = 60.0
@@ -50,6 +53,7 @@ text = "x"
 label_settings = ExtResource("2_j2yqt")
 
 [node name="RedShieldCount" type="Label" parent="RedShield"]
+layout_mode = 0
 offset_left = 67.0
 offset_top = 4.0
 offset_right = 107.0
@@ -66,6 +70,7 @@ texture = ExtResource("4_cncrq")
 stretch_mode = 3
 
 [node name="x" type="Label" parent="Sword"]
+layout_mode = 0
 offset_left = 42.0
 offset_top = 2.0
 offset_right = 60.0
@@ -74,6 +79,7 @@ text = "x"
 label_settings = ExtResource("2_j2yqt")
 
 [node name="SwordCount" type="Label" parent="Sword"]
+layout_mode = 0
 offset_left = 67.0
 offset_top = 4.0
 offset_right = 107.0

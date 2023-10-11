@@ -20,7 +20,6 @@ func _process(delta):
 	rotate_y(rotation_speed * delta) # Rotation
 
 func _on_body_entered(body):
-	print("Collected!")
 	if body.is_in_group("Player"):
 		body.on_collect_collectable(collectableType)
 		

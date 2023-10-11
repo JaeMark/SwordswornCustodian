@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+signal collectable_collected(collectbaleType : Collectable.CollectableType, num_collected : int)
+
 @export var speed = 20.0
 @export var acceleration = 5.0
 @export var jump_speed = 10.0
@@ -61,8 +63,15 @@ func handle_movement_input(delta):
 func on_collect_collectable(collectableType : Collectable.CollectableType):
 	match collectableType:
 		Collectable.CollectableType.BlueShield:
+			blue_shield_collected += 1
+			collectable_collected.emit(collectableType, blue_shield_collected)
 			print("Collected blue shield!")
 		Collectable.CollectableType.RedShield:
+			red_shield_collected += 1
+			collectable_collected.emit(collectableType, red_shield_collected)
 			print("Collected red shield!")
 		Collectable.CollectableType.Sword:
+			sword_collected += 1
+			collectable_collected.emit(collectableType, sword_collected)
 			print("Collected sword!")
+	
