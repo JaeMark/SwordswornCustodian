@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://28uw4na4udj0"]
 
-[ext_resource type="PackedScene" uid="uid://dyh3wo7o1f6dv" path="res://Collectables/Colllectable.tscn" id="1_bo6x2"]
+[ext_resource type="PackedScene" uid="uid://dyh3wo7o1f6dv" path="res://Collectables/Collectable.tscn" id="1_bo6x2"]
 [ext_resource type="ArrayMesh" uid="uid://dnunm24ka0p4k" path="res://Assets/Models/shieldRed.obj" id="2_f52xr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p2edw"]
