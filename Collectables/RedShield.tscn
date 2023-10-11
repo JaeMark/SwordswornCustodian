@@ -7,6 +7,7 @@
 size = Vector3(2.6, 2.7, 1)
 
 [node name="Collectable" instance=ExtResource("1_bo6x2")]
+collectableType = 1
 
 [node name="MeshInstance3D" parent="." index="0"]
 mesh = ExtResource("2_f52xr")
