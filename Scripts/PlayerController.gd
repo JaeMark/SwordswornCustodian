@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 signal collectable_collected(collectbaleType : Collectable.CollectableType, num_collected : int)
+signal submit_collectables(num_blue_shield : int, num_red_shield : int, num_sword : int)
 
 @export var speed = 20.0
 @export var acceleration = 5.0
@@ -47,6 +48,10 @@ func _physics_process(delta):
 		target_spring_rotation -= input_dir.x * rotation_speed * delta
 
 	spring_arm.rotation.y = lerp_angle(spring_arm.rotation.y, target_spring_rotation, camera_lag)
+
+	# Handle interact input
+	if Input.is_action_just_released("interact"):
+		submit_collectables.emit(blue_shield_collected, red_shield_collected, sword_collected)
 
 	handle_movement_input(delta)
 	move_and_slide()

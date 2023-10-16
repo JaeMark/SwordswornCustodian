@@ -59,5 +59,26 @@ player = NodePath("../Player")
 [node name="Gate" parent="." instance=ExtResource("7_t10hw")]
 transform = Transform3D(-0.086269, 0, 0.996272, 0, 1, 0, -0.996272, 0, -0.086269, -9.64052, 0.616936, -32.1314)
 
+[node name="Sword2" parent="." instance=ExtResource("2_mr0f7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.964, 1.38107, -7.47417)
+collision_mask = 3
+
+[node name="Sword3" parent="." instance=ExtResource("2_mr0f7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.70035, 1.27014, -15.0349)
+collision_mask = 3
+
+[node name="BlueShield2" parent="." instance=ExtResource("3_ynq0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9033, 2.24528, -10.4233)
+collision_mask = 3
+
+[node name="BlueShield3" parent="." instance=ExtResource("3_ynq0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.2706, 2.29923, -15.1144)
+collision_mask = 3
+
+[node name="BlueShield4" parent="." instance=ExtResource("3_ynq0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.08103, 2.18567, -6.65546)
+collision_mask = 3
+
 [connection signal="collectable_collected" from="Player" to="Hud" method="_on_player_collectable_collected"]
+[connection signal="submit_collectables" from="Player" to="King" method="_on_player_submit_collectables"]
 [connection signal="open_gate" from="King" to="Gate" method="_on_king_open_gate"]
