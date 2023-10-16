@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bigohgss0sb1m"]
+[gd_scene load_steps=10 format=3 uid="uid://bigohgss0sb1m"]
 
 [ext_resource type="PackedScene" uid="uid://chordaknnkt4w" path="res://Player/Player.tscn" id="1_q2bx6"]
 [ext_resource type="PackedScene" uid="uid://2nomv2ixafjf" path="res://Collectables/Sword.tscn" id="2_mr0f7"]
@@ -7,23 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://dwc32eg7otd3g" path="res://HUD/Hud.tscn" id="5_ptwgn"]
 [ext_resource type="PackedScene" uid="uid://cs5e14efng25y" path="res://NPCs/King.tscn" id="6_mk4aw"]
 [ext_resource type="PackedScene" uid="uid://dwpekdxyfgh4d" path="res://Objects/Gate.tscn" id="7_t10hw"]
-[ext_resource type="PackedScene" uid="uid://06ovrukfpmwi" path="res://Assets/Models/towerTopRoof.fbx" id="37_7vwlt"]
-[ext_resource type="PackedScene" uid="uid://dlfiuodfi2wsu" path="res://Assets/Models/wall.fbx" id="38_5nk7a"]
-[ext_resource type="PackedScene" uid="uid://rjh0dju0u5xd" path="res://Assets/Models/wallCorner.fbx" id="39_62fdb"]
-[ext_resource type="PackedScene" uid="uid://gmjf2e8213y7" path="res://Assets/Models/wallCornerHalf.fbx" id="40_3jgfa"]
-[ext_resource type="PackedScene" uid="uid://crpa8gj7bp1bt" path="res://Assets/Models/wallCornerHalfTower.fbx" id="41_iofye"]
-[ext_resource type="PackedScene" uid="uid://cdkf5o8a0qqux" path="res://Assets/Models/wallDoor.fbx" id="42_ihu7k"]
-[ext_resource type="PackedScene" uid="uid://b22fk7dtqd41o" path="res://Assets/Models/wallHalf.fbx" id="43_l1mo6"]
-[ext_resource type="PackedScene" uid="uid://cjkmfe5sdqtw4" path="res://Assets/Models/wallNarrow.fbx" id="44_8rjts"]
-[ext_resource type="PackedScene" uid="uid://byrme74ni8jce" path="res://Assets/Models/wallNarrowCorner.fbx" id="45_vqbjo"]
-[ext_resource type="PackedScene" uid="uid://c02pbenihro6c" path="res://Assets/Models/wallNarrowGate.fbx" id="46_adcmc"]
-[ext_resource type="PackedScene" uid="uid://c7gjp8mejn4y0" path="res://Assets/Models/wallNarrowStairs.fbx" id="47_ruoyx"]
-[ext_resource type="PackedScene" uid="uid://lrmirwvgk70m" path="res://Assets/Models/wallNarrowStairsFence.fbx" id="48_ks6r7"]
-[ext_resource type="PackedScene" uid="uid://bqdotj1konmfn" path="res://Assets/Models/wallNarrowWood.fbx" id="49_tqx2m"]
-[ext_resource type="PackedScene" uid="uid://dfhok4dllu12" path="res://Assets/Models/wallNarrowWoodFence.fbx" id="50_rcca4"]
-[ext_resource type="PackedScene" uid="uid://cc4ubpsl5bdin" path="res://Assets/Models/wallPillar.fbx" id="51_oq551"]
-[ext_resource type="PackedScene" uid="uid://r0odj3bvwbao" path="res://Assets/Models/wallStud.fbx" id="52_odyhw"]
-[ext_resource type="PackedScene" uid="uid://dk6i3rwkwflx3" path="res://Assets/Models/wallToNarrow.fbx" id="53_5byyr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_og2ie"]
 size = Vector3(100, 1, 100)
@@ -95,57 +78,6 @@ collision_mask = 3
 [node name="BlueShield4" parent="." instance=ExtResource("3_ynq0x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.08103, 2.18567, -6.65546)
 collision_mask = 3
-
-[node name="towerTopRoof" parent="." instance=ExtResource("37_7vwlt")]
-transform = Transform3D(-0.734512, 0, -0.678596, 0, 1, 0, 0.678596, 0, -0.734512, -26.3487, 1.38465, -25.337)
-
-[node name="wall" parent="." instance=ExtResource("38_5nk7a")]
-transform = Transform3D(-0.734512, 0, -0.678596, 0, 1, 0, 0.678596, 0, -0.734512, -26.3487, 1.38465, -25.337)
-
-[node name="wallCorner" parent="." instance=ExtResource("39_62fdb")]
-transform = Transform3D(-0.734512, 0, -0.678596, 0, 1, 0, 0.678596, 0, -0.734512, -26.3487, 1.38465, -25.337)
-
-[node name="wallCornerHalf" parent="." instance=ExtResource("40_3jgfa")]
-transform = Transform3D(-0.734512, 0, -0.678596, 0, 1, 0, 0.678596, 0, -0.734512, -26.3487, 1.38465, -25.337)
-
-[node name="wallCornerHalfTower" parent="." instance=ExtResource("41_iofye")]
-transform = Transform3D(-0.734512, 0, -0.678596, 0, 1, 0, 0.678596, 0, -0.734512, -26.3487, 1.38465, -25.337)
-
-[node name="wallDoor" parent="." instance=ExtResource("42_ihu7k")]
-transform = Transform3D(-0.734512, 0, -0.678596, 0, 1, 0, 0.678596, 0, -0.734512, -26.3487, 1.38465, -25.337)
-
-[node name="wallHalf" parent="." instance=ExtResource("43_l1mo6")]
-transform = Transform3D(-0.734512, 0, -0.678596, 0, 1, 0, 0.678596, 0, -0.734512, -26.3487, 1.38465, -25.337)
-
-[node name="wallNarrow" parent="." instance=ExtResource("44_8rjts")]
-transform = Transform3D(-0.734512, 0, -0.678596, 0, 1, 0, 0.678596, 0, -0.734512, -26.3487, 1.38465, -25.337)
-
-[node name="wallNarrowCorner" parent="." instance=ExtResource("45_vqbjo")]
-transform = Transform3D(-0.734512, 0, -0.678596, 0, 1, 0, 0.678596, 0, -0.734512, -26.3487, 1.38465, -25.337)
-
-[node name="wallNarrowGate" parent="." instance=ExtResource("46_adcmc")]
-transform = Transform3D(-0.734512, 0, -0.678596, 0, 1, 0, 0.678596, 0, -0.734512, -26.3487, 1.38465, -25.337)
-
-[node name="wallNarrowStairs" parent="." instance=ExtResource("47_ruoyx")]
-transform = Transform3D(-0.734512, 0, -0.678596, 0, 1, 0, 0.678596, 0, -0.734512, -26.3487, 1.38465, -25.337)
-
-[node name="wallNarrowStairsFence" parent="." instance=ExtResource("48_ks6r7")]
-transform = Transform3D(-0.734512, 0, -0.678596, 0, 1, 0, 0.678596, 0, -0.734512, -26.3487, 1.38465, -25.337)
-
-[node name="wallNarrowWood" parent="." instance=ExtResource("49_tqx2m")]
-transform = Transform3D(-0.734512, 0, -0.678596, 0, 1, 0, 0.678596, 0, -0.734512, -26.3487, 1.38465, -25.337)
-
-[node name="wallNarrowWoodFence" parent="." instance=ExtResource("50_rcca4")]
-transform = Transform3D(-0.734512, 0, -0.678596, 0, 1, 0, 0.678596, 0, -0.734512, -26.3487, 1.38465, -25.337)
-
-[node name="wallPillar" parent="." instance=ExtResource("51_oq551")]
-transform = Transform3D(-0.734512, 0, -0.678596, 0, 1, 0, 0.678596, 0, -0.734512, -26.3487, 1.38465, -25.337)
-
-[node name="wallStud" parent="." instance=ExtResource("52_odyhw")]
-transform = Transform3D(-0.734512, 0, -0.678596, 0, 1, 0, 0.678596, 0, -0.734512, -26.3487, 1.38465, -25.337)
-
-[node name="wallToNarrow" parent="." instance=ExtResource("53_5byyr")]
-transform = Transform3D(-0.734512, 0, -0.678596, 0, 1, 0, 0.678596, 0, -0.734512, -26.3487, 1.38465, -25.337)
 
 [connection signal="collectable_collected" from="Player" to="Hud" method="_on_player_collectable_collected"]
 [connection signal="submit_collectables" from="Player" to="King" method="_on_player_submit_collectables"]
