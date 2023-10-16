@@ -1,5 +1,7 @@
 extends Node3D
 
+signal open_gate
+
 @export var required_blue_shield = 2
 @export var required_red_shield = 1
 @export var required_sword = 3
@@ -19,6 +21,8 @@ func _ready():
 
 func check_request(num_blue_shield : int, num_red_shield : int, num_sword : int) :
 	is_request_fulfilled = num_blue_shield >= required_blue_shield && num_red_shield >= required_red_shield && num_sword >= required_sword
+	if is_request_fulfilled:
+		open_gate.emit()
 
 func _process(delta):
 	if is_player_in_sight && player:
