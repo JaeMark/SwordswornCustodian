@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://boemdygcolhqx" path="res://HUD/SubmitUI.tscn" id="4_jvw5u"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k5ekd"]
-size = Vector3(10, 5.17716, 10)
+size = Vector3(20, 5, 20)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_mlqfy"]
 viewport_path = NodePath("SubViewport2")
@@ -43,7 +43,7 @@ mesh = ExtResource("1_fi1i6")
 script = ExtResource("3_ltqxu")
 
 [node name="InteractionCollider" type="CollisionShape3D" parent="KingMesh/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.06598, -3.81405)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.75, 0)
 shape = SubResource("BoxShape3D_k5ekd")
 
 [node name="SubmitSprite" type="Sprite3D" parent="KingMesh/Area3D"]

@@ -23,10 +23,13 @@ func check_request(num_blue_shield : int, num_red_shield : int, num_sword : int)
 func _process(delta):
 	if is_player_in_sight && player:
 		king_mesh.look_at(player.position, Vector3(0,1,0))
+		king_mesh.rotation.x = 0 # Make sure king does not look up
 
 func _on_area_3d_body_entered(body):
-	is_player_in_sight = true
+	if body.is_in_group("Player"):
+		is_player_in_sight = true
 	
 
 func _on_area_3d_body_exited(body):
-	is_player_in_sight = false
+	if body.is_in_group("Player"):
+		is_player_in_sight = false
