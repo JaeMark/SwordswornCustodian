@@ -39,20 +39,20 @@ script = ExtResource("1_wpit4")
 [node name="KingMesh" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_fi1i6")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="KingMesh"]
 script = ExtResource("3_ltqxu")
 
-[node name="InteractionCollider" type="CollisionShape3D" parent="Area3D"]
+[node name="InteractionCollider" type="CollisionShape3D" parent="KingMesh/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.06598, -3.81405)
 shape = SubResource("BoxShape3D_k5ekd")
 
-[node name="SubmitSprite" type="Sprite3D" parent="Area3D"]
+[node name="SubmitSprite" type="Sprite3D" parent="KingMesh/Area3D"]
 transform = Transform3D(-3, 0, -4.52987e-07, -1.30451e-09, 2.99999, 0.00863937, 4.52985e-07, 0.00863937, -2.99999, 0, 9.20325, 0)
 visible = false
 modulate = Color(0.231373, 0.231373, 0.231373, 1)
 texture = SubResource("ViewportTexture_mlqfy")
 
-[node name="RequestSprite" type="Sprite3D" parent="."]
+[node name="RequestSprite" type="Sprite3D" parent="KingMesh"]
 transform = Transform3D(-3, 0, -4.52987e-07, 0, 3, 0, 4.52987e-07, 0, -3, 0, 6.52635, 0)
 texture = SubResource("ViewportTexture_i1177")
 
@@ -71,5 +71,7 @@ transparent_bg = true
 [node name="SubmitUI" parent="SubViewport2" instance=ExtResource("4_jvw5u")]
 script = SubResource("GDScript_gs037")
 
-[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
-[connection signal="body_exited" from="Area3D" to="Area3D" method="_on_body_exited"]
+[connection signal="body_entered" from="KingMesh/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="KingMesh/Area3D" to="KingMesh/Area3D" method="_on_body_entered"]
+[connection signal="body_exited" from="KingMesh/Area3D" to="." method="_on_area_3d_body_exited"]
+[connection signal="body_exited" from="KingMesh/Area3D" to="KingMesh/Area3D" method="_on_body_exited"]
