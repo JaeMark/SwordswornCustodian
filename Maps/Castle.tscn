@@ -53,9 +53,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.74749, 2.19574, -17.4566)
 
 [node name="King" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_mk4aw")]
 transform = Transform3D(-0.734512, 0, -0.678596, 0, 1, 0, 0.678596, 0, -0.734512, -26.3487, 1.38465, -25.337)
-required_blue_shield = 2
-required_red_shield = 1
-required_sword = 3
 player = NodePath("../Player")
 
 [connection signal="collectable_collected" from="Player" to="Hud" method="_on_player_collectable_collected"]
