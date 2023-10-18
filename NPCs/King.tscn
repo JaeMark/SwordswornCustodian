@@ -20,8 +20,8 @@ viewport_path = NodePath("SubViewport")
 viewport_path = NodePath("SubViewport3")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yuufh"]
-radius = 2.5
-height = 6.0
+radius = 1.25
+height = 3.0
 
 [sub_resource type="GDScript" id="GDScript_gs037"]
 script/source = "extends Control
@@ -63,6 +63,7 @@ _data = {
 script = ExtResource("1_wpit4")
 
 [node name="KingMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 mesh = ExtResource("1_fi1i6")
 
 [node name="Area3D" type="Area3D" parent="KingMesh"]
@@ -93,7 +94,7 @@ transparent_bg = true
 [node name="KingRequestUI" parent="SubViewport" instance=ExtResource("2_3yhad")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.35, 0)
 shape = SubResource("CapsuleShape3D_yuufh")
 
 [node name="SubViewport2" type="SubViewport" parent="."]

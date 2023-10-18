@@ -4,7 +4,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dnunm24ka0p4k" path="res://Assets/Models/shieldRed.obj" id="2_mph03"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sa2uu"]
-size = Vector3(2.6, 2.7, 1)
+size = Vector3(1.3, 1.35, 0.5)
 
 [node name="Collectable" instance=ExtResource("1_2n11i")]
 collectableType = 1

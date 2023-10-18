@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bigohgss0sb1m"]
+[gd_scene load_steps=12 format=3 uid="uid://bigohgss0sb1m"]
 
 [ext_resource type="PackedScene" uid="uid://chordaknnkt4w" path="res://Player/Player.tscn" id="1_q2bx6"]
 [ext_resource type="PackedScene" uid="uid://2nomv2ixafjf" path="res://Collectables/Sword.tscn" id="2_mr0f7"]
@@ -6,7 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://djdmk3cti26d8" path="res://Collectables/RedShield.tscn" id="4_d36h0"]
 [ext_resource type="PackedScene" uid="uid://dwc32eg7otd3g" path="res://HUD/Hud.tscn" id="5_ptwgn"]
 [ext_resource type="PackedScene" uid="uid://cs5e14efng25y" path="res://NPCs/King.tscn" id="6_mk4aw"]
-[ext_resource type="PackedScene" uid="uid://dwpekdxyfgh4d" path="res://Objects/Gate.tscn" id="7_t10hw"]
+[ext_resource type="PackedScene" uid="uid://dwpekdxyfgh4d" path="res://Objects/gate.tscn" id="7_t10hw"]
+[ext_resource type="PackedScene" uid="uid://i0mon8pxxi5n" path="res://Objects/Walls/wall_narrow_wood_fence.tscn" id="8_p3own"]
+[ext_resource type="PackedScene" uid="uid://qgido8b2hxsk" path="res://Objects/Walls/wall_narrow_stairs_fence.tscn" id="9_nx7bu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_og2ie"]
 size = Vector3(100, 1, 100)
@@ -33,50 +35,56 @@ shadow_enabled = true
 shadow_opacity = 0.75
 
 [node name="Sword" parent="." instance=ExtResource("2_mr0f7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.53409, 1.35749, -13.9399)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.53409, 0.863365, -13.9399)
 collision_mask = 3
 
 [node name="BlueShield" parent="." instance=ExtResource("3_ynq0x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9033, 2.24528, -10.4233)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9033, 1.31242, -10.4233)
 collision_mask = 3
 
 [node name="Hud" parent="." instance=ExtResource("5_ptwgn")]
 
 [node name="RedShield" parent="." instance=ExtResource("4_d36h0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.74749, 2.19574, -11.4396)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.74749, 1.26288, -11.4396)
 
 [node name="RedShield2" parent="." instance=ExtResource("4_d36h0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.20459, 2.19574, -11.4396)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.20459, 1.26288, -11.4396)
 
 [node name="RedShield3" parent="." instance=ExtResource("4_d36h0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.74749, 2.19574, -17.4566)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.74749, 1.26288, -17.4566)
 
 [node name="King" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_mk4aw")]
-transform = Transform3D(-0.734512, 0, -0.678596, 0, 1, 0, 0.678596, 0, -0.734512, -26.3487, 1.38465, -25.337)
+transform = Transform3D(-0.734512, 0, -0.678596, 0, 1, 0, 0.678596, 0, -0.734512, -26.3487, 0.474001, -25.337)
 player = NodePath("../Player")
 
 [node name="Gate" parent="." instance=ExtResource("7_t10hw")]
 transform = Transform3D(-0.086269, 0, 0.996272, 0, 1, 0, -0.996272, 0, -0.086269, -9.64052, 0.616936, -32.1314)
 
 [node name="Sword2" parent="." instance=ExtResource("2_mr0f7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.964, 1.38107, -7.47417)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.964, 0.886945, -7.47417)
 collision_mask = 3
 
 [node name="Sword3" parent="." instance=ExtResource("2_mr0f7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.70035, 1.27014, -15.0349)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.70035, 0.776015, -15.0349)
 collision_mask = 3
 
 [node name="BlueShield2" parent="." instance=ExtResource("3_ynq0x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9033, 2.24528, -10.4233)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9033, 1.31242, -10.4233)
 collision_mask = 3
 
 [node name="BlueShield3" parent="." instance=ExtResource("3_ynq0x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.2706, 2.29923, -15.1144)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.2706, 1.36637, -15.1144)
 collision_mask = 3
 
 [node name="BlueShield4" parent="." instance=ExtResource("3_ynq0x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.08103, 2.18567, -6.65546)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.06188, 1.25281, -6.65855)
 collision_mask = 3
+
+[node name="wallNarrowWoodFence" parent="." instance=ExtResource("8_p3own")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.53365, 0.5, 5.15542)
+
+[node name="wallNarrowStairsFence" parent="." instance=ExtResource("9_nx7bu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.19, 0.5, -11.8567)
 
 [connection signal="collectable_collected" from="Player" to="Hud" method="_on_player_collectable_collected"]
 [connection signal="submit_collectables" from="Player" to="King" method="_on_player_submit_collectables"]
