@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cs5e14efng25y"]
+[gd_scene load_steps=15 format=3 uid="uid://cs5e14efng25y"]
 
 [ext_resource type="ArrayMesh" uid="uid://dc4k7v5onivmm" path="res://Assets/Models/king.obj" id="1_fi1i6"]
 [ext_resource type="Script" path="res://Scripts/KingController.gd" id="1_wpit4"]
@@ -36,6 +36,28 @@ func _ready():
 func _process(delta):
 	pass
 "
+
+[sub_resource type="Animation" id="Animation_0boml"]
+resource_name = "cheer"
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("KingMesh")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.2, 1, 0, 0.707107, 0, 0.707107, 0.4, 1, 0, 1, 0, -4.37114e-08, 0.6, 1, 0, -0.707107, 0, 0.707107, 0.8, 1, 0, 0, 0, 1)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("KingMesh")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.4, 1, 0, 2, 0, 0.8, 1, 0, 0, 0)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rl4tu"]
+_data = {
+"cheer": SubResource("Animation_0boml")
+}
 
 [node name="King" type="RigidBody3D"]
 script = ExtResource("1_wpit4")
@@ -85,6 +107,11 @@ disable_3d = true
 transparent_bg = true
 
 [node name="LevelCompleteUI" parent="SubViewport3" instance=ExtResource("6_6enb4")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rl4tu")
+}
 
 [connection signal="body_entered" from="KingMesh/Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="KingMesh/Area3D" to="KingMesh/Area3D" method="_on_body_entered"]

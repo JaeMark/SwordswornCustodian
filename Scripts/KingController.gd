@@ -11,6 +11,7 @@ signal open_gate
 @onready var king_submit_ui = $SubViewport2/SubmitUI
 @onready var king_level_complete_ui_sprite = $KingMesh/LevelCompleteUI
 @onready var king_mesh = $KingMesh
+@onready var animation_player = $AnimationPlayer
 
 var is_request_fulfilled := false;
 var is_player_in_sight := false;
@@ -51,3 +52,5 @@ func handle_successful_cleanup():
 	king_request_ui.visible = false
 	king_submit_ui.visible = false
 	king_level_complete_ui_sprite.visible = true
+	animation_player.play("cheer")
+	
