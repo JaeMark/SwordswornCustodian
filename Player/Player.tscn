@@ -16,7 +16,7 @@ tracks/0/enabled = true
 tracks/0/path = NodePath("KnightBlue")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.25, 1, 0, 0.5, 0, 0.5, 1, 0, 0, 0)
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.25, 1, 0, 0.25, 0, 0.5, 1, 0, 0, 0)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0lnor"]
 _data = {
@@ -32,7 +32,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.10866, 0)
 shape = SubResource("CapsuleShape3D_6fyx4")
 
 [node name="KnightBlue" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
 mesh = ExtResource("1_y1rqk")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="."]
