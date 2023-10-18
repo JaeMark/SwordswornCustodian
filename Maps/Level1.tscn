@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bigohgss0sb1m"]
+[gd_scene load_steps=30 format=3 uid="uid://bigohgss0sb1m"]
 
 [ext_resource type="PackedScene" uid="uid://chordaknnkt4w" path="res://Player/Player.tscn" id="1_q2bx6"]
 [ext_resource type="PackedScene" uid="uid://2nomv2ixafjf" path="res://Collectables/Sword.tscn" id="2_mr0f7"]
@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://7np1jif2ugpy" path="res://Objects/Tower/tower_top_corner.tscn" id="24_fnu64"]
 [ext_resource type="PackedScene" uid="uid://d2d1u4tje3h5k" path="res://Objects/Tower/tower_balcony.tscn" id="25_do85s"]
 [ext_resource type="PackedScene" uid="uid://bevm5txcxorfr" path="res://Objects/Tower/tower_top_roof.tscn" id="26_jra7w"]
+[ext_resource type="PackedScene" uid="uid://c0q0e5wiuixo0" path="res://Objects/SeigeWeapons/siege_ballista.tscn" id="27_is5fa"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_n541q"]
 size = Vector3(100, 1, 100)
@@ -36,17 +37,13 @@ data = PackedVector3Array(-50, 0.5, 50, 50, 0.5, 50, -50, -0.5, 50, 50, 0.5, 50,
 [node name="Castle" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_q2bx6")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 13, 0.5, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 14, 0.5, 6)
 max_jump_height = 3.5
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.422618, -0.694272, 0.582563, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 0, 0)
 shadow_enabled = true
 shadow_opacity = 0.75
-
-[node name="BlueShield" parent="." instance=ExtResource("3_ynq0x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0967, 1.31242, -10.4233)
-collision_mask = 3
 
 [node name="Hud" parent="." instance=ExtResource("5_ptwgn")]
 
@@ -60,34 +57,34 @@ player = NodePath("../Player")
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.35948, 0.616936, -32.1314)
 
 [node name="RedShield" parent="." instance=ExtResource("4_d36h0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.74749, 5.26288, -17.4396)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 6, -21)
 
 [node name="Sword" parent="." instance=ExtResource("2_mr0f7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.46591, 0.863365, -13.9399)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5, 1, 0)
 collision_mask = 3
 
 [node name="Sword2" parent="." instance=ExtResource("2_mr0f7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.036, 0.886945, -7.47417)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 16, 29)
 collision_mask = 3
 
 [node name="Sword4" parent="." instance=ExtResource("2_mr0f7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.036, 0.886945, -7.47417)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 13.5, -36)
 collision_mask = 3
 
 [node name="Sword3" parent="." instance=ExtResource("2_mr0f7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.7003, 0.776015, -15.0349)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5, 1, 12)
+collision_mask = 3
+
+[node name="BlueShield" parent="." instance=ExtResource("3_ynq0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 11.5, 10)
 collision_mask = 3
 
 [node name="BlueShield2" parent="." instance=ExtResource("3_ynq0x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0967, 1.31242, -10.4233)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0967, 6.31242, -16.4233)
 collision_mask = 3
 
 [node name="BlueShield3" parent="." instance=ExtResource("3_ynq0x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7294, 1.36637, -15.1144)
-collision_mask = 3
-
-[node name="BlueShield4" parent="." instance=ExtResource("3_ynq0x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9381, 1.25281, -6.65855)
+transform = Transform3D(-1, 0, -5.96046e-08, 0, 1, 0, 5.96046e-08, 0, -1, 13, 1.5, 0)
 collision_mask = 3
 
 [node name="wallNarrowWoodFence" parent="." instance=ExtResource("8_p3own")]
@@ -204,6 +201,9 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_85nwj")
+
+[node name="siegeBallista" parent="." instance=ExtResource("27_is5fa")]
+transform = Transform3D(0.459921, 0, -0.88796, 0.112798, 0.991899, 0.0584237, 0.880766, -0.12703, 0.456195, 22.497, 0.15, -13.264)
 
 [connection signal="collectable_collected" from="Player" to="Hud" method="_on_player_collectable_collected"]
 [connection signal="submit_collectables" from="Player" to="King" method="_on_player_submit_collectables"]
