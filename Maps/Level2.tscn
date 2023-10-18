@@ -236,8 +236,28 @@ transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 
 mesh = ExtResource("28_vc1dm")
 
 [node name="KillZone" parent="." node_paths=PackedStringArray("spawn_point") instance=ExtResource("29_8aad0")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 44, 15, 3)
+transform = Transform3D(37.8, 0, 0, 0, 4.704, 0, 0, 0, 93.24, 68, 4, -6)
 spawn_point = NodePath("../FlagBlue")
+
+[node name="KillZone2" parent="." node_paths=PackedStringArray("spawn_point") instance=ExtResource("29_8aad0")]
+transform = Transform3D(-1.29429e-06, 0, -102.564, 0, 4.704, 0, 29.61, 0, -4.48321e-06, 36, 4, 43)
+spawn_point = NodePath("../FlagBlue")
+
+[node name="KillZone3" parent="." node_paths=PackedStringArray("spawn_point") instance=ExtResource("29_8aad0")]
+transform = Transform3D(-35.28, 0, 7.5318e-06, 0, 4.704, 0, -3.08428e-06, 0, -86.1537, -28, 4, 16)
+spawn_point = NodePath("../FlagBlue3")
+
+[node name="KillZone4" parent="." node_paths=PackedStringArray("spawn_point") instance=ExtResource("29_8aad0")]
+transform = Transform3D(-32.76, 0, 3.58514e-06, 0, 4.704, 0, -2.86397e-06, 0, -41.0092, -23, 4, -47)
+spawn_point = NodePath("../FlagBlue4")
+
+[node name="KillZone5" parent="." node_paths=PackedStringArray("spawn_point") instance=ExtResource("29_8aad0")]
+transform = Transform3D(5.94825e-06, 0, 60.3076, 0, 4.704, 0, -45.36, 0, 7.90839e-06, 57, 4, -59)
+spawn_point = NodePath("../FlagBlue2")
+
+[node name="KillZone6" parent="." node_paths=PackedStringArray("spawn_point") instance=ExtResource("29_8aad0")]
+transform = Transform3D(3.85149e-06, 0, 44.2256, 0, 1.4112, 0, -29.3706, 0, 5.79948e-06, 3, 10, -50)
+spawn_point = NodePath("../FlagBlue4")
 
 [connection signal="collectable_collected" from="Player" to="Hud" method="_on_player_collectable_collected"]
 [connection signal="submit_collectables" from="Player" to="King" method="_on_player_submit_collectables"]
