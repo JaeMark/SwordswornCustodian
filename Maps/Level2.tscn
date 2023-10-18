@@ -1,0 +1,210 @@
+[gd_scene load_steps=30 format=3 uid="uid://iijvoihwv5bw"]
+
+[ext_resource type="PackedScene" uid="uid://chordaknnkt4w" path="res://Player/Player.tscn" id="1_h2jgr"]
+[ext_resource type="PackedScene" uid="uid://dwc32eg7otd3g" path="res://HUD/Hud.tscn" id="2_87hap"]
+[ext_resource type="PackedScene" uid="uid://cs5e14efng25y" path="res://NPCs/King.tscn" id="3_vek8t"]
+[ext_resource type="PackedScene" uid="uid://dwpekdxyfgh4d" path="res://Objects/gate.tscn" id="4_nc5bj"]
+[ext_resource type="PackedScene" uid="uid://djdmk3cti26d8" path="res://Collectables/RedShield.tscn" id="5_2patq"]
+[ext_resource type="PackedScene" uid="uid://2nomv2ixafjf" path="res://Collectables/Sword.tscn" id="6_t1vv2"]
+[ext_resource type="PackedScene" uid="uid://cot8b6v6337jx" path="res://Collectables/BlueShield.tscn" id="7_1bbw4"]
+[ext_resource type="PackedScene" uid="uid://i0mon8pxxi5n" path="res://Objects/Walls/wall_narrow_wood_fence.tscn" id="8_t84ua"]
+[ext_resource type="PackedScene" uid="uid://ci6ay11i0qqvv" path="res://Objects/Walls/wall_corner_half_tower.tscn" id="9_smik2"]
+[ext_resource type="PackedScene" uid="uid://85m4h0h1o0g0" path="res://Objects/Walls/wall_narrow_stairs.tscn" id="10_i5313"]
+[ext_resource type="PackedScene" uid="uid://b5xrrgv84xj5p" path="res://Objects/Walls/wall.tscn" id="11_u1u17"]
+[ext_resource type="PackedScene" uid="uid://jmsn3o3dn08w" path="res://Objects/Walls/wall_stud.tscn" id="12_886jp"]
+[ext_resource type="PackedScene" uid="uid://d2cbkqb4qpa4y" path="res://Objects/Walls/wall_door.tscn" id="13_3lwoq"]
+[ext_resource type="PackedScene" uid="uid://c7v8rbgpgf5nt" path="res://Objects/Walls/wall_pillar.tscn" id="14_rhbi7"]
+[ext_resource type="PackedScene" uid="uid://dl0hdx3bpg3ir" path="res://Objects/Walls/wall_corner.tscn" id="15_8xpcf"]
+[ext_resource type="PackedScene" uid="uid://cwm75mwdf3gjt" path="res://Objects/Tower/tower_base.tscn" id="16_eas7v"]
+[ext_resource type="PackedScene" uid="uid://baq88accg24o0" path="res://Objects/Tower/tower_square_arch.tscn" id="17_0wr4r"]
+[ext_resource type="PackedScene" uid="uid://d4a5njddxianf" path="res://Objects/Tower/tower_square_base.tscn" id="18_s1rmc"]
+[ext_resource type="PackedScene" uid="uid://drbnxdvqgxgl" path="res://Objects/Tower/tower_square_top_roof.tscn" id="19_uyjuw"]
+[ext_resource type="PackedScene" uid="uid://c0020vqplmby1" path="res://Objects/Tower/tower_square_mid_open.tscn" id="20_d115a"]
+[ext_resource type="PackedScene" uid="uid://df3r7t6u5d2n" path="res://Objects/Tower/tower_square_mid_windows.tscn" id="21_3ef85"]
+[ext_resource type="PackedScene" uid="uid://cxlnsc22dnkln" path="res://Objects/Walls/wall_half.tscn" id="22_0uc7l"]
+[ext_resource type="PackedScene" uid="uid://c4bongft75h6e" path="res://Objects/Tower/tower_square_poles.tscn" id="23_p5kq3"]
+[ext_resource type="PackedScene" uid="uid://7np1jif2ugpy" path="res://Objects/Tower/tower_top_corner.tscn" id="24_8jv1s"]
+[ext_resource type="PackedScene" uid="uid://d2d1u4tje3h5k" path="res://Objects/Tower/tower_balcony.tscn" id="25_h8y2c"]
+[ext_resource type="PackedScene" uid="uid://bevm5txcxorfr" path="res://Objects/Tower/tower_top_roof.tscn" id="26_cuobs"]
+[ext_resource type="PackedScene" uid="uid://c0q0e5wiuixo0" path="res://Objects/SeigeWeapons/siege_ballista.tscn" id="27_sdf3l"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_n541q"]
+size = Vector3(100, 1, 100)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_85nwj"]
+data = PackedVector3Array(-50, 0.5, 50, 50, 0.5, 50, -50, -0.5, 50, 50, 0.5, 50, 50, -0.5, 50, -50, -0.5, 50, 50, 0.5, -50, -50, 0.5, -50, 50, -0.5, -50, -50, 0.5, -50, -50, -0.5, -50, 50, -0.5, -50, 50, 0.5, 50, 50, 0.5, -50, 50, -0.5, 50, 50, 0.5, -50, 50, -0.5, -50, 50, -0.5, 50, -50, 0.5, -50, -50, 0.5, 50, -50, -0.5, -50, -50, 0.5, 50, -50, -0.5, 50, -50, -0.5, -50, 50, 0.5, 50, -50, 0.5, 50, 50, 0.5, -50, -50, 0.5, 50, -50, 0.5, -50, 50, 0.5, -50, -50, -0.5, 50, 50, -0.5, 50, -50, -0.5, -50, 50, -0.5, 50, 50, -0.5, -50, -50, -0.5, -50)
+
+[node name="Castle" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_h2jgr")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 14, 0.5, 6)
+max_jump_height = 3.5
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.422618, -0.694272, 0.582563, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 0, 0)
+shadow_enabled = true
+shadow_opacity = 0.75
+
+[node name="Hud" parent="." instance=ExtResource("2_87hap")]
+
+[node name="King" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_vek8t")]
+transform = Transform3D(-0.734512, 0, -0.678596, 0, 1, 0, 0.678596, 0, -0.734512, 0.6513, 0.474001, -21.337)
+required_blue_shield = 3
+required_sword = 4
+player = NodePath("../Player")
+
+[node name="Gate" parent="." instance=ExtResource("4_nc5bj")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.35948, 0.616936, -32.1314)
+
+[node name="RedShield" parent="." instance=ExtResource("5_2patq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 6, -21)
+
+[node name="Sword" parent="." instance=ExtResource("6_t1vv2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5, 1, 0)
+collision_mask = 3
+
+[node name="Sword2" parent="." instance=ExtResource("6_t1vv2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 16, 29)
+collision_mask = 3
+
+[node name="Sword4" parent="." instance=ExtResource("6_t1vv2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 13.5, -36)
+collision_mask = 3
+
+[node name="Sword3" parent="." instance=ExtResource("6_t1vv2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5, 1, 12)
+collision_mask = 3
+
+[node name="BlueShield" parent="." instance=ExtResource("7_1bbw4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 11.5, 10)
+collision_mask = 3
+
+[node name="BlueShield2" parent="." instance=ExtResource("7_1bbw4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0967, 6.31242, -16.4233)
+collision_mask = 3
+
+[node name="BlueShield3" parent="." instance=ExtResource("7_1bbw4")]
+transform = Transform3D(-1, 0, -5.96046e-08, 0, 1, 0, 5.96046e-08, 0, -1, 13, 1.5, 0)
+collision_mask = 3
+
+[node name="wallNarrowWoodFence" parent="." instance=ExtResource("8_t84ua")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 0, 4)
+
+[node name="wallCornerHalfTower" parent="." instance=ExtResource("9_smik2")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 29, 0, 24)
+
+[node name="wallNarrowWoodFence2" parent="." instance=ExtResource("8_t84ua")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 0, -6)
+
+[node name="wallNarrowStairs" parent="." instance=ExtResource("10_i5313")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 0, 14)
+
+[node name="wall" parent="." instance=ExtResource("11_u1u17")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 0, -16)
+
+[node name="wall2" parent="." instance=ExtResource("11_u1u17")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 0, -26)
+
+[node name="wallStud" parent="." instance=ExtResource("12_886jp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.5, 0, -17)
+
+[node name="wallCornerHalfTower2" parent="." instance=ExtResource("9_smik2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 29, 0, -26)
+
+[node name="wallDoor" parent="." instance=ExtResource("13_3lwoq")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1, 0, -36)
+
+[node name="wallPillar" parent="." instance=ExtResource("14_rhbi7")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 19, 0, -36)
+
+[node name="wallPillar3" parent="." instance=ExtResource("14_rhbi7")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -21, 0, -16)
+
+[node name="wallPillar2" parent="." instance=ExtResource("14_rhbi7")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -11, 0, -36)
+
+[node name="wallNarrowStairs2" parent="." instance=ExtResource("10_i5313")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9, 0, -36)
+
+[node name="wallCornerHalfTower3" parent="." instance=ExtResource("9_smik2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -26)
+
+[node name="wallNarrowWoodFence3" parent="." instance=ExtResource("8_t84ua")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -21, 0, -6)
+
+[node name="wallNarrowWoodFence4" parent="." instance=ExtResource("8_t84ua")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -21, 0, 4)
+
+[node name="wallNarrowWoodFence5" parent="." instance=ExtResource("8_t84ua")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -21, 0, 14)
+
+[node name="wallCorner" parent="." instance=ExtResource("15_8xpcf")]
+transform = Transform3D(-1, 0, 1.19209e-07, 0, 1, 0, -1.19209e-07, 0, -1, -21, 0, 24)
+
+[node name="wallCorner2" parent="." instance=ExtResource("15_8xpcf")]
+transform = Transform3D(1, 0, -5.96046e-08, 0, 1, 0, 5.96046e-08, 0, 1, 19, 0, 14)
+
+[node name="wallCorner3" parent="." instance=ExtResource("15_8xpcf")]
+transform = Transform3D(-1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, -1, 9, 0, 34)
+
+[node name="wall3" parent="." instance=ExtResource("11_u1u17")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 29, 0, 34)
+
+[node name="wall4" parent="." instance=ExtResource("11_u1u17")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1, 0, 24)
+
+[node name="towerBase" parent="." instance=ExtResource("16_eas7v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 24)
+
+[node name="towerSquareArch" parent="." instance=ExtResource("17_0wr4r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 5, -25.25)
+
+[node name="towerSquareBase" parent="." instance=ExtResource("18_s1rmc")]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -11, 5, -26)
+
+[node name="towerSquareTopRoof" parent="." instance=ExtResource("19_uyjuw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 25, -26)
+
+[node name="towerSquareMidOpen" parent="." instance=ExtResource("20_d115a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 10, 5)
+
+[node name="towerSquareMidWindows" parent="." instance=ExtResource("21_3ef85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 15, -25.25)
+
+[node name="wallHalf" parent="." instance=ExtResource("22_0uc7l")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 9, 0, 24)
+
+[node name="towerSquarePoles" parent="." instance=ExtResource("23_p5kq3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 5)
+
+[node name="towerTopCorner" parent="." instance=ExtResource("24_8jv1s")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 34, 13, 39)
+
+[node name="towerBalcony" parent="." instance=ExtResource("25_h8y2c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 9, 24)
+
+[node name="towerTopRoof" parent="." instance=ExtResource("26_cuobs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 22, 24)
+
+[node name="towerTopCorner2" parent="." instance=ExtResource("24_8jv1s")]
+transform = Transform3D(-1.63913e-07, 0, -1, 0, 1, 0, 1, 0, -1.63913e-07, 44, 13, -31)
+
+[node name="towerTopCorner3" parent="." instance=ExtResource("24_8jv1s")]
+transform = Transform3D(1, 0, -1.20201e-07, 0, 1, 0, 1.20201e-07, 0, 1, -16, 13, -41)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.65, 0, 0, 0, 1, 0, 0, 0, 0.8, 11, 0, 0)
+mesh = SubResource("BoxMesh_n541q")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_85nwj")
+
+[node name="siegeBallista" parent="." instance=ExtResource("27_sdf3l")]
+transform = Transform3D(0.459921, 0, -0.88796, 0.112798, 0.991899, 0.0584237, 0.880766, -0.12703, 0.456195, 22.497, 0.15, -13.264)
+
+[connection signal="collectable_collected" from="Player" to="Hud" method="_on_player_collectable_collected"]
+[connection signal="submit_collectables" from="Player" to="King" method="_on_player_submit_collectables"]
+[connection signal="open_gate" from="King" to="Gate" method="_on_king_open_gate"]
