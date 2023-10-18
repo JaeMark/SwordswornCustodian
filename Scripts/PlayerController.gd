@@ -14,6 +14,8 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 @onready var spring_arm = $SpringArm3D
 @onready var model = $KnightBlue
+@onready var animation_tree = $AnimationTree
+@onready var animation_player = $AnimationPlayer
 
 var target_rotation = 0.0
 var target_spring_rotation = 0.0
@@ -23,6 +25,9 @@ var is_jumping = false
 var blue_shield_collected = 0
 var red_shield_collected = 0
 var sword_collected = 0
+
+func _ready():
+	pass
 
 func _physics_process(delta):
 	if not is_on_floor() and not is_jumping:
@@ -40,6 +45,9 @@ func _physics_process(delta):
 		if jump_height >= max_jump_height:
 			velocity.y = 0
 			is_jumping = false
+	
+	handle_movement_input(delta)
+	
 
 	var input_dir = Input.get_vector("left", "right", "forward", "back")
 
@@ -48,13 +56,23 @@ func _physics_process(delta):
 		target_spring_rotation -= input_dir.x * rotation_speed * delta
 
 	spring_arm.rotation.y = lerp_angle(spring_arm.rotation.y, target_spring_rotation, camera_lag)
+	
 
+		
 	# Handle interact input
 	if Input.is_action_just_released("interact"):
 		submit_collectables.emit(blue_shield_collected, red_shield_collected, sword_collected)
-
-	handle_movement_input(delta)
+	
 	move_and_slide()
+	
+	# Handle walk animation
+	if is_on_floor() and input_dir.x != 0 || input_dir.y !=  0:
+		print("hello")
+		animation_player.play("Walk")
+		#animation_tree["parameters/conditions/is_walking"] = true
+	else:
+		animation_player.stop()
+		#animation_tree["parameters/conditions/is_walking"] = false
 
 func handle_movement_input(delta):
 	var input_dir = Input.get_vector("left", "right", "forward", "back")

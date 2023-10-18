@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://chordaknnkt4w"]
+[gd_scene load_steps=6 format=3 uid="uid://chordaknnkt4w"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerController.gd" id="1_dpykx"]
 [ext_resource type="ArrayMesh" uid="uid://bh445wve3eqta" path="res://Assets/Models/knightBlue.obj" id="1_y1rqk"]
@@ -7,24 +7,16 @@
 radius = 2.0
 height = 6.5
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sc381"]
-animation = &"Walk"
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_3fe6j"]
-states/End/position = Vector2(581, 162)
-states/Start/position = Vector2(340, 162)
-states/Walk/node = SubResource("AnimationNodeAnimation_sc381")
-states/Walk/position = Vector2(472, 162)
-
 [sub_resource type="Animation" id="Animation_yccrp"]
 resource_name = "Walk"
-tracks/0/type = "rotation_3d"
+length = 0.5
+tracks/0/type = "position_3d"
 tracks/0/imported = false
-tracks/0/enabled = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("KnightBlue")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.25, 1, 0, 0, 0.0348995, 0.999391, 0.5, 1, 0, 0, 0, 1, 0.75, 1, 0, 0, -0.0348995, 0.999391, 1, 1, 0, 0, 0, 1)
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.25, 1, 0, 0.5, 0, 0.5, 1, 0, 0, 0)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0lnor"]
 _data = {
@@ -32,6 +24,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody3D" groups=["Player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.129068, 0)
 script = ExtResource("1_dpykx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -39,6 +32,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.10866, 0)
 shape = SubResource("CapsuleShape3D_6fyx4")
 
 [node name="KnightBlue" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
 mesh = ExtResource("1_y1rqk")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="."]
@@ -47,11 +41,8 @@ spring_length = 20.0
 
 [node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
 
-[node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource("AnimationNodeStateMachine_3fe6j")
-anim_player = NodePath("../AnimationPlayer")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
 libraries = {
 "": SubResource("AnimationLibrary_0lnor")
 }
