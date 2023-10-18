@@ -76,7 +76,6 @@ shape = SubResource("BoxShape3D_k5ekd")
 [node name="SubmitSprite" type="Sprite3D" parent="KingMesh/Area3D"]
 transform = Transform3D(-3, 0, -4.52987e-07, -1.30451e-09, 2.99999, 0.00863937, 4.52985e-07, 0.00863937, -2.99999, 0, 9.20325, 0)
 visible = false
-modulate = Color(0.231373, 0.231373, 0.231373, 1)
 texture = SubResource("ViewportTexture_mlqfy")
 
 [node name="RequestSprite" type="Sprite3D" parent="KingMesh"]
