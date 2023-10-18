@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bigohgss0sb1m"]
+[gd_scene load_steps=16 format=3 uid="uid://bigohgss0sb1m"]
 
 [ext_resource type="PackedScene" uid="uid://chordaknnkt4w" path="res://Player/Player.tscn" id="1_q2bx6"]
 [ext_resource type="PackedScene" uid="uid://2nomv2ixafjf" path="res://Collectables/Sword.tscn" id="2_mr0f7"]
@@ -8,7 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://cs5e14efng25y" path="res://NPCs/King.tscn" id="6_mk4aw"]
 [ext_resource type="PackedScene" uid="uid://dwpekdxyfgh4d" path="res://Objects/gate.tscn" id="7_t10hw"]
 [ext_resource type="PackedScene" uid="uid://i0mon8pxxi5n" path="res://Objects/Walls/wall_narrow_wood_fence.tscn" id="8_p3own"]
-[ext_resource type="PackedScene" uid="uid://qgido8b2hxsk" path="res://Objects/Walls/wall_narrow_stairs_fence.tscn" id="9_nx7bu"]
+[ext_resource type="PackedScene" uid="uid://85m4h0h1o0g0" path="res://Objects/Walls/wall_narrow_stairs.tscn" id="10_2xdkn"]
+[ext_resource type="PackedScene" uid="uid://ci6ay11i0qqvv" path="res://Objects/Walls/wall_corner_half_tower.tscn" id="10_sc284"]
+[ext_resource type="PackedScene" uid="uid://b5xrrgv84xj5p" path="res://Objects/Walls/wall.tscn" id="11_s48sh"]
+[ext_resource type="PackedScene" uid="uid://jmsn3o3dn08w" path="res://Objects/Walls/wall_stud.tscn" id="12_0fr72"]
+[ext_resource type="PackedScene" uid="uid://d2cbkqb4qpa4y" path="res://Objects/Walls/wall_door.tscn" id="13_fahmv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_og2ie"]
 size = Vector3(100, 1, 100)
@@ -58,7 +62,7 @@ transform = Transform3D(-0.734512, 0, -0.678596, 0, 1, 0, 0.678596, 0, -0.734512
 player = NodePath("../Player")
 
 [node name="Gate" parent="." instance=ExtResource("7_t10hw")]
-transform = Transform3D(-0.086269, 0, 0.996272, 0, 1, 0, -0.996272, 0, -0.086269, -9.64052, 0.616936, -32.1314)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -18.6405, 0.616936, -34.1314)
 
 [node name="Sword2" parent="." instance=ExtResource("2_mr0f7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.964, 0.886945, -7.47417)
@@ -81,10 +85,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.06188, 1.25281, -6.65855)
 collision_mask = 3
 
 [node name="wallNarrowWoodFence" parent="." instance=ExtResource("8_p3own")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.53365, 0.5, 5.15542)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 0, 4)
 
-[node name="wallNarrowStairsFence" parent="." instance=ExtResource("9_nx7bu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.19, 0.5, -11.8567)
+[node name="wallCornerHalfTower" parent="." instance=ExtResource("10_sc284")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 29, 0, 24)
+
+[node name="wallNarrowWoodFence2" parent="." instance=ExtResource("8_p3own")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 0, -6)
+
+[node name="wallNarrowStairs" parent="." instance=ExtResource("10_2xdkn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 0, 14)
+
+[node name="wall" parent="." instance=ExtResource("11_s48sh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 0, -16)
+
+[node name="wall2" parent="." instance=ExtResource("11_s48sh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 0, -26)
+
+[node name="wallStud" parent="." instance=ExtResource("12_0fr72")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.5, 0, -17)
+
+[node name="wallCornerHalfTower2" parent="." instance=ExtResource("10_sc284")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 29, 0, -26)
+
+[node name="wallDoor" parent="." instance=ExtResource("13_fahmv")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -11, 0, -38)
 
 [connection signal="collectable_collected" from="Player" to="Hud" method="_on_player_collectable_collected"]
 [connection signal="submit_collectables" from="Player" to="King" method="_on_player_submit_collectables"]
