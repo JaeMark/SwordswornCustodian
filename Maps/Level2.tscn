@@ -37,7 +37,7 @@ data = PackedVector3Array(-50, 0.5, 50, 50, 0.5, 50, -50, -0.5, 50, 50, 0.5, 50,
 [node name="Castle" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_h2jgr")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 14, 13.5, -1)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4, 0.5, -16)
 max_jump_height = 3.5
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -50,6 +50,7 @@ shadow_opacity = 0.75
 [node name="King" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_vek8t")]
 transform = Transform3D(-0.734512, 0, -0.678596, 0, 1, 0, 0.678596, 0, -0.734512, 0.6513, 0.474001, -28.337)
 required_blue_shield = 3
+required_red_shield = 3
 required_sword = 4
 player = NodePath("../Player")
 
@@ -57,34 +58,37 @@ player = NodePath("../Player")
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.35948, 0.616936, -32.1314)
 
 [node name="RedShield" parent="." instance=ExtResource("5_2patq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 6, -21)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.91236, 16.6803, 16.5338)
+
+[node name="RedShield2" parent="." instance=ExtResource("5_2patq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 1.5, 5)
+
+[node name="RedShield3" parent="." instance=ExtResource("5_2patq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 14, -36.1747)
 
 [node name="Sword" parent="." instance=ExtResource("6_t1vv2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 12.5, -17.175)
 collision_mask = 3
 
 [node name="Sword2" parent="." instance=ExtResource("6_t1vv2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 16, 29)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.93956, 11, 5.41257)
 collision_mask = 3
-
-[node name="Sword4" parent="." instance=ExtResource("6_t1vv2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 13.5, -36)
-collision_mask = 3
+metadata/_edit_group_ = true
 
 [node name="Sword3" parent="." instance=ExtResource("6_t1vv2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5, 1, 12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.2246, 13.4805, -35.1249)
 collision_mask = 3
 
 [node name="BlueShield" parent="." instance=ExtResource("7_1bbw4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 11.5, 10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 14, -36.1747)
 collision_mask = 3
 
 [node name="BlueShield2" parent="." instance=ExtResource("7_1bbw4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0967, 6.31242, -16.4233)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 4.825)
 collision_mask = 3
 
 [node name="BlueShield3" parent="." instance=ExtResource("7_1bbw4")]
-transform = Transform3D(-1, 0, -5.96046e-08, 0, 1, 0, 5.96046e-08, 0, -1, 13, 1.5, 0)
+transform = Transform3D(-1, 0, -5.96046e-08, 0, 1, 0, 5.96046e-08, 0, -1, 34, 6.5, -22.175)
 collision_mask = 3
 
 [node name="wallNarrowWoodFence3" parent="." instance=ExtResource("8_t84ua")]
@@ -145,7 +149,7 @@ transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 9, 0, 24)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -5)
 
 [node name="towerTopCorner" parent="." instance=ExtResource("24_8jv1s")]
-transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 44, 13, 28)
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 44, 13, 29)
 
 [node name="towerBalcony" parent="." instance=ExtResource("25_h8y2c")]
 transform = Transform3D(0.287607, 0.315748, -0.904204, 0.37344, 0.832399, 0.409456, 0.881944, -0.455428, 0.121491, -4.30817, 8.22347, 14.6072)
