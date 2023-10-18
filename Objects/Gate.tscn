@@ -15,7 +15,7 @@ tracks/0/enabled = true
 tracks/0/path = NodePath("MeshInstance3D")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 5.1, 1, 0, 7.1, 0, 5.2, 1, 0, 7, 0, 5.4, 1, 0, 6.9, 0, 5.5, 1, 0, 7, 0)
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 5.1, 1, 0, 3.55, 0, 5.2, 1, 0, 3.5, 0, 5.4, 1, 0, 3.45, 0, 5.5, 1, 0, 3.5, 0)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7josr"]
 _data = {

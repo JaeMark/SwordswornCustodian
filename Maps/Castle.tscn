@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bigohgss0sb1m"]
+[gd_scene load_steps=29 format=3 uid="uid://bigohgss0sb1m"]
 
 [ext_resource type="PackedScene" uid="uid://chordaknnkt4w" path="res://Player/Player.tscn" id="1_q2bx6"]
 [ext_resource type="PackedScene" uid="uid://2nomv2ixafjf" path="res://Collectables/Sword.tscn" id="2_mr0f7"]
@@ -13,75 +13,81 @@
 [ext_resource type="PackedScene" uid="uid://b5xrrgv84xj5p" path="res://Objects/Walls/wall.tscn" id="11_s48sh"]
 [ext_resource type="PackedScene" uid="uid://jmsn3o3dn08w" path="res://Objects/Walls/wall_stud.tscn" id="12_0fr72"]
 [ext_resource type="PackedScene" uid="uid://d2cbkqb4qpa4y" path="res://Objects/Walls/wall_door.tscn" id="13_fahmv"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_og2ie"]
-size = Vector3(100, 1, 100)
+[ext_resource type="PackedScene" uid="uid://c7v8rbgpgf5nt" path="res://Objects/Walls/wall_pillar.tscn" id="14_ea611"]
+[ext_resource type="PackedScene" uid="uid://dl0hdx3bpg3ir" path="res://Objects/Walls/wall_corner.tscn" id="16_y0j8v"]
+[ext_resource type="PackedScene" uid="uid://cwm75mwdf3gjt" path="res://Objects/Tower/tower_base.tscn" id="17_3vrnc"]
+[ext_resource type="PackedScene" uid="uid://d4a5njddxianf" path="res://Objects/Tower/tower_square_base.tscn" id="18_3s83i"]
+[ext_resource type="PackedScene" uid="uid://baq88accg24o0" path="res://Objects/Tower/tower_square_arch.tscn" id="18_6not2"]
+[ext_resource type="PackedScene" uid="uid://drbnxdvqgxgl" path="res://Objects/Tower/tower_square_top_roof.tscn" id="19_qissn"]
+[ext_resource type="PackedScene" uid="uid://c0020vqplmby1" path="res://Objects/Tower/tower_square_mid_open.tscn" id="20_l4v2s"]
+[ext_resource type="PackedScene" uid="uid://df3r7t6u5d2n" path="res://Objects/Tower/tower_square_mid_windows.tscn" id="21_jrh7w"]
+[ext_resource type="PackedScene" uid="uid://cxlnsc22dnkln" path="res://Objects/Walls/wall_half.tscn" id="22_vobjv"]
+[ext_resource type="PackedScene" uid="uid://c4bongft75h6e" path="res://Objects/Tower/tower_square_poles.tscn" id="23_d5rce"]
+[ext_resource type="PackedScene" uid="uid://7np1jif2ugpy" path="res://Objects/Tower/tower_top_corner.tscn" id="24_fnu64"]
+[ext_resource type="PackedScene" uid="uid://d2d1u4tje3h5k" path="res://Objects/Tower/tower_balcony.tscn" id="25_do85s"]
+[ext_resource type="PackedScene" uid="uid://bevm5txcxorfr" path="res://Objects/Tower/tower_top_roof.tscn" id="26_jra7w"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_n541q"]
 size = Vector3(100, 1, 100)
 
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_85nwj"]
+data = PackedVector3Array(-50, 0.5, 50, 50, 0.5, 50, -50, -0.5, 50, 50, 0.5, 50, 50, -0.5, 50, -50, -0.5, 50, 50, 0.5, -50, -50, 0.5, -50, 50, -0.5, -50, -50, 0.5, -50, -50, -0.5, -50, 50, -0.5, -50, 50, 0.5, 50, 50, 0.5, -50, 50, -0.5, 50, 50, 0.5, -50, 50, -0.5, -50, 50, -0.5, 50, -50, 0.5, -50, -50, 0.5, 50, -50, -0.5, -50, -50, 0.5, 50, -50, -0.5, 50, -50, -0.5, -50, 50, 0.5, 50, -50, 0.5, 50, 50, 0.5, -50, -50, 0.5, 50, -50, 0.5, -50, 50, 0.5, -50, -50, -0.5, 50, 50, -0.5, 50, -50, -0.5, -50, 50, -0.5, 50, 50, -0.5, -50, -50, -0.5, -50)
+
 [node name="Castle" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_q2bx6")]
-
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0333357, 2.38419e-07, -0.000786781)
-shape = SubResource("BoxShape3D_og2ie")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-mesh = SubResource("BoxMesh_n541q")
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 13, 0.5, 0)
+max_jump_height = 3.5
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.422618, -0.694272, 0.582563, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 0, 0)
 shadow_enabled = true
 shadow_opacity = 0.75
 
-[node name="Sword" parent="." instance=ExtResource("2_mr0f7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.53409, 0.863365, -13.9399)
-collision_mask = 3
-
 [node name="BlueShield" parent="." instance=ExtResource("3_ynq0x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9033, 1.31242, -10.4233)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0967, 1.31242, -10.4233)
 collision_mask = 3
 
 [node name="Hud" parent="." instance=ExtResource("5_ptwgn")]
 
-[node name="RedShield" parent="." instance=ExtResource("4_d36h0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.74749, 1.26288, -11.4396)
-
-[node name="RedShield2" parent="." instance=ExtResource("4_d36h0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.20459, 1.26288, -11.4396)
-
-[node name="RedShield3" parent="." instance=ExtResource("4_d36h0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.74749, 1.26288, -17.4566)
-
 [node name="King" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_mk4aw")]
-transform = Transform3D(-0.734512, 0, -0.678596, 0, 1, 0, 0.678596, 0, -0.734512, -26.3487, 0.474001, -25.337)
+transform = Transform3D(-0.734512, 0, -0.678596, 0, 1, 0, 0.678596, 0, -0.734512, 0.6513, 0.474001, -21.337)
+required_blue_shield = 3
+required_sword = 4
 player = NodePath("../Player")
 
 [node name="Gate" parent="." instance=ExtResource("7_t10hw")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -18.6405, 0.616936, -34.1314)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.35948, 0.616936, -32.1314)
+
+[node name="RedShield" parent="." instance=ExtResource("4_d36h0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.74749, 5.26288, -17.4396)
+
+[node name="Sword" parent="." instance=ExtResource("2_mr0f7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.46591, 0.863365, -13.9399)
+collision_mask = 3
 
 [node name="Sword2" parent="." instance=ExtResource("2_mr0f7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.964, 0.886945, -7.47417)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.036, 0.886945, -7.47417)
+collision_mask = 3
+
+[node name="Sword4" parent="." instance=ExtResource("2_mr0f7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.036, 0.886945, -7.47417)
 collision_mask = 3
 
 [node name="Sword3" parent="." instance=ExtResource("2_mr0f7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.70035, 0.776015, -15.0349)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.7003, 0.776015, -15.0349)
 collision_mask = 3
 
 [node name="BlueShield2" parent="." instance=ExtResource("3_ynq0x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9033, 1.31242, -10.4233)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0967, 1.31242, -10.4233)
 collision_mask = 3
 
 [node name="BlueShield3" parent="." instance=ExtResource("3_ynq0x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.2706, 1.36637, -15.1144)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7294, 1.36637, -15.1144)
 collision_mask = 3
 
 [node name="BlueShield4" parent="." instance=ExtResource("3_ynq0x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.06188, 1.25281, -6.65855)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9381, 1.25281, -6.65855)
 collision_mask = 3
 
 [node name="wallNarrowWoodFence" parent="." instance=ExtResource("8_p3own")]
@@ -109,7 +115,95 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.5, 0, -17)
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 29, 0, -26)
 
 [node name="wallDoor" parent="." instance=ExtResource("13_fahmv")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -11, 0, -38)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1, 0, -36)
+
+[node name="wallPillar" parent="." instance=ExtResource("14_ea611")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 19, 0, -36)
+
+[node name="wallPillar3" parent="." instance=ExtResource("14_ea611")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -21, 0, -16)
+
+[node name="wallPillar2" parent="." instance=ExtResource("14_ea611")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -11, 0, -36)
+
+[node name="wallNarrowStairs2" parent="." instance=ExtResource("10_2xdkn")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9, 0, -36)
+
+[node name="wallCornerHalfTower3" parent="." instance=ExtResource("10_sc284")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -26)
+
+[node name="wallNarrowWoodFence3" parent="." instance=ExtResource("8_p3own")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -21, 0, -6)
+
+[node name="wallNarrowWoodFence4" parent="." instance=ExtResource("8_p3own")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -21, 0, 4)
+
+[node name="wallNarrowWoodFence5" parent="." instance=ExtResource("8_p3own")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -21, 0, 14)
+
+[node name="wallCorner" parent="." instance=ExtResource("16_y0j8v")]
+transform = Transform3D(-1, 0, 1.19209e-07, 0, 1, 0, -1.19209e-07, 0, -1, -21, 0, 24)
+
+[node name="wallCorner2" parent="." instance=ExtResource("16_y0j8v")]
+transform = Transform3D(1, 0, -5.96046e-08, 0, 1, 0, 5.96046e-08, 0, 1, 19, 0, 14)
+
+[node name="wallCorner3" parent="." instance=ExtResource("16_y0j8v")]
+transform = Transform3D(-1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, -1, 9, 0, 34)
+
+[node name="wall3" parent="." instance=ExtResource("11_s48sh")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 29, 0, 34)
+
+[node name="wall4" parent="." instance=ExtResource("11_s48sh")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1, 0, 24)
+
+[node name="towerBase" parent="." instance=ExtResource("17_3vrnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 24)
+
+[node name="towerSquareArch" parent="." instance=ExtResource("18_6not2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 5, -25.25)
+
+[node name="towerSquareBase" parent="." instance=ExtResource("18_3s83i")]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -11, 5, -26)
+
+[node name="towerSquareTopRoof" parent="." instance=ExtResource("19_qissn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 25, -26)
+
+[node name="towerSquareMidOpen" parent="." instance=ExtResource("20_l4v2s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 10, 5)
+
+[node name="towerSquareMidWindows" parent="." instance=ExtResource("21_jrh7w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 15, -25.25)
+
+[node name="wallHalf" parent="." instance=ExtResource("22_vobjv")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 9, 0, 24)
+
+[node name="towerSquarePoles" parent="." instance=ExtResource("23_d5rce")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 5)
+
+[node name="towerTopCorner" parent="." instance=ExtResource("24_fnu64")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 34, 13, 39)
+
+[node name="towerBalcony" parent="." instance=ExtResource("25_do85s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 9, 24)
+
+[node name="towerTopRoof" parent="." instance=ExtResource("26_jra7w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 22, 24)
+
+[node name="towerTopCorner2" parent="." instance=ExtResource("24_fnu64")]
+transform = Transform3D(-1.63913e-07, 0, -1, 0, 1, 0, 1, 0, -1.63913e-07, 44, 13, -31)
+
+[node name="towerTopCorner3" parent="." instance=ExtResource("24_fnu64")]
+transform = Transform3D(1, 0, -1.20201e-07, 0, 1, 0, 1.20201e-07, 0, 1, -16, 13, -41)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.65, 0, 0, 0, 1, 0, 0, 0, 0.8, 11, 0, 0)
+mesh = SubResource("BoxMesh_n541q")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_85nwj")
 
 [connection signal="collectable_collected" from="Player" to="Hud" method="_on_player_collectable_collected"]
 [connection signal="submit_collectables" from="Player" to="King" method="_on_player_submit_collectables"]
