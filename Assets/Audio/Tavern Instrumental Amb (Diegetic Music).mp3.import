@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://qenuoenl4hee"
+path="res://.godot/imported/Tavern Instrumental Amb (Diegetic Music).mp3-d7eda049e8f1748e6a05621841a2051e.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Tavern Instrumental Amb (Diegetic Music).mp3"
+dest_files=["res://.godot/imported/Tavern Instrumental Amb (Diegetic Music).mp3-d7eda049e8f1748e6a05621841a2051e.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

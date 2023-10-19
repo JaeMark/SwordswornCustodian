@@ -62,7 +62,6 @@ func _physics_process(delta):
 		is_dashing = false
 		# Reset speed back to normal
 		speed /= dash_speed_multiplier
-
 	
 	# Get input for movement
 	var input = Input.get_vector("left", "right", "forward", "back")

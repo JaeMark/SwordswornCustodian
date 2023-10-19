@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bigohgss0sb1m"]
+[gd_scene load_steps=35 format=3 uid="uid://bigohgss0sb1m"]
 
 [ext_resource type="PackedScene" uid="uid://chordaknnkt4w" path="res://Player/Player.tscn" id="1_q2bx6"]
 [ext_resource type="PackedScene" uid="uid://2nomv2ixafjf" path="res://Collectables/Sword.tscn" id="2_mr0f7"]
@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://c2hrb564nyb2y" path="res://Objects/KillZone.tscn" id="29_2r2bt"]
 [ext_resource type="PackedScene" uid="uid://30rhoqk7vly0" path="res://Objects/bridge.tscn" id="30_xcgow"]
 [ext_resource type="PackedScene" uid="uid://cdm6y10fh1tah" path="res://Objects/Checkpoint.tscn" id="31_fp8iq"]
+[ext_resource type="AudioStream" uid="uid://qenuoenl4hee" path="res://Assets/Audio/Tavern Instrumental Amb (Diegetic Music).mp3" id="32_3dp6i"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_n541q"]
 size = Vector3(100, 1, 100)
@@ -241,6 +242,11 @@ transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 
 
 [node name="Checkpoint2" parent="." instance=ExtResource("31_fp8iq")]
 transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 39, 13, 34)
+
+[node name="BGMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("32_3dp6i")
+volume_db = -10.0
+autoplay = true
 
 [connection signal="collectable_collected" from="Player" to="Hud" method="_on_player_collectable_collected"]
 [connection signal="submit_collectables" from="Player" to="King" method="_on_player_submit_collectables"]
