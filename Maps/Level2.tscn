@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://iijvoihwv5bw"]
+[gd_scene load_steps=33 format=3 uid="uid://iijvoihwv5bw"]
 
 [ext_resource type="PackedScene" uid="uid://chordaknnkt4w" path="res://Player/Player.tscn" id="1_h2jgr"]
 [ext_resource type="PackedScene" uid="uid://dwc32eg7otd3g" path="res://HUD/Hud.tscn" id="2_87hap"]
@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://c0q0e5wiuixo0" path="res://Objects/SeigeWeapons/siege_ballista.tscn" id="27_sdf3l"]
 [ext_resource type="PackedScene" uid="uid://c2hrb564nyb2y" path="res://Objects/KillZone.tscn" id="29_8aad0"]
 [ext_resource type="PackedScene" uid="uid://cdm6y10fh1tah" path="res://Objects/Checkpoint.tscn" id="29_ab6u8"]
+[ext_resource type="PackedScene" uid="uid://30rhoqk7vly0" path="res://Objects/bridge.tscn" id="30_vjvta"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_n541q"]
 size = Vector3(100, 1, 100)
@@ -243,6 +244,15 @@ transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, -11, 13, -
 
 [node name="Checkpoint4" parent="." instance=ExtResource("29_ab6u8")]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 49, 13, -36)
+
+[node name="bridge" parent="." instance=ExtResource("30_vjvta")]
+transform = Transform3D(5.96046e-08, 0, -1, 0, 1, 0, 1, 0, 5.96046e-08, 4, 0, -46)
+
+[node name="bridge2" parent="." instance=ExtResource("30_vjvta")]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 4, 0, -46)
+
+[node name="KillZone2" parent="." instance=ExtResource("29_8aad0")]
+transform = Transform3D(20, 0, 0, 0, 2, 0, 0, 0, 15, 4, 8, -43)
 
 [connection signal="collectable_collected" from="Player" to="Hud" method="_on_player_collectable_collected"]
 [connection signal="submit_collectables" from="Player" to="King" method="_on_player_submit_collectables"]
