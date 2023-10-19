@@ -51,7 +51,6 @@ max_jump_height = 3.5
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.422618, -0.694272, 0.582563, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 0, 0)
-visible = false
 shadow_enabled = true
 shadow_opacity = 0.75
 

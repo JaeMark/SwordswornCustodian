@@ -4,8 +4,8 @@ extends Control
 @onready var red_shield_text = $RedShieldCount
 @onready var sword_text = $SwordCount
 
-func update_request_amount(collectbaleType, num_collected):
-	match collectbaleType:
+func update_request_amount(collectableType, num_collected):
+	match collectableType:
 		Collectable.CollectableType.BlueShield:
 			blue_shield_text.text = str(num_collected)
 		Collectable.CollectableType.RedShield:

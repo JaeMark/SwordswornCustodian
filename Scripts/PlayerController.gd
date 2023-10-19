@@ -33,6 +33,7 @@ func _ready():
 
 func _physics_process(delta):
 	if not is_on_floor() and not is_jumping:
+		# Apply gravity when not on the floor and not jumping
 		velocity.y -= gravity * jump_speed * delta
 	elif Input.is_action_just_pressed("jump"):
 		is_jumping = true
@@ -41,43 +42,40 @@ func _physics_process(delta):
 
 	if is_jumping and Input.is_action_just_released("jump"):
 		is_jumping = false
-		
+	
+	# Check if jump height exceeds maximum
 	if is_jumping:
 		var jump_height = abs(global_transform.origin.y - jump_start_height)
 		if jump_height >= max_jump_height:
 			velocity.y = 0
 			is_jumping = false
 	
-	_handle_movement_input(delta)
+	# Get input for movement
+	var input = Input.get_vector("left", "right", "forward", "back")
 	
-	var input_dir = Input.get_vector("left", "right", "forward", "back")
-
-	if input_dir.x != 0:
-		model.rotation.y -= input_dir.x * rotation_speed * delta
-		target_spring_rotation -= input_dir.x * rotation_speed * delta
-
+	# Calculate movement direction
+	var direction = Vector3(0, 0, 1).rotated(Vector3.UP, model.rotation.y)
+	var velocity_y = velocity.y; # Save a copy of velocity y
+	velocity = lerp(velocity, direction * input.y * speed, acceleration * delta)
+	velocity.y = velocity_y # Restore the original vertical velocity. This maintains consistent vertical motion.
+	
+	# Handle rotation input
+	if input.x != 0:
+		model.rotation.y -= input.x * rotation_speed * delta
+		target_spring_rotation -= input.x * rotation_speed * delta
 	spring_arm.rotation.y = lerp_angle(spring_arm.rotation.y, target_spring_rotation, camera_lag)
 	
 	# Handle interact input
 	if Input.is_action_just_released("interact"):
 		submit_collectables.emit(blue_shield_collected, red_shield_collected, sword_collected)
 	
-	move_and_slide()
-	
 	# Handle walk animation
-	if is_on_floor() and input_dir.x != 0 || input_dir.y !=  0:
+	if is_on_floor() and input.x != 0 || input.y !=  0:
 		animation_player.play("Walk")
 	else:
 		animation_player.stop()
-
-func _handle_movement_input(delta):
-	var input_dir = Input.get_vector("left", "right", "forward", "back")
-
-	var direction = Vector3(0, 0, 1).rotated(Vector3.UP, model.rotation.y)
-	
-	var velocity_y = velocity.y;
-	velocity = lerp(velocity, direction * input_dir.y * speed, acceleration * delta)
-	velocity.y = velocity_y
+		
+	move_and_slide()
 
 func set_spawn_point(checkpoint_location : Vector3):
 	spawn_location = checkpoint_location
