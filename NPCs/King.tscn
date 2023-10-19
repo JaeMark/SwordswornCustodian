@@ -1,9 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://cs5e14efng25y"]
+[gd_scene load_steps=19 format=3 uid="uid://cs5e14efng25y"]
 
 [ext_resource type="ArrayMesh" uid="uid://dc4k7v5onivmm" path="res://Assets/Models/king.obj" id="1_fi1i6"]
 [ext_resource type="Script" path="res://Scripts/KingController.gd" id="1_wpit4"]
 [ext_resource type="PackedScene" uid="uid://dp3r4qrafhli6" path="res://HUD/KingRequest.tscn" id="2_3yhad"]
+[ext_resource type="AudioStream" uid="uid://bietvifrnuw8t" path="res://Assets/Audio/task_incomplete.mp3" id="2_ferdl"]
+[ext_resource type="AudioStream" uid="uid://ws3vsn7box10" path="res://Assets/Audio/request_fulfilled.mp3" id="3_3wdui"]
 [ext_resource type="Script" path="res://Scripts/SubmitHandler.gd" id="3_pheyn"]
+[ext_resource type="AudioStream" uid="uid://cns41a5kcwg75" path="res://Assets/Audio/hurt.mp3" id="4_j6sb0"]
 [ext_resource type="PackedScene" uid="uid://boemdygcolhqx" path="res://HUD/SubmitUI.tscn" id="4_jvw5u"]
 [ext_resource type="PackedScene" uid="uid://deu10d5ayr7xp" path="res://HUD/LevelCompleteUI.tscn" id="6_6enb4"]
 
@@ -59,8 +62,13 @@ _data = {
 "cheer": SubResource("Animation_0boml")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_4gotb"]
+
 [node name="King" type="RigidBody3D"]
 script = ExtResource("1_wpit4")
+request_incomplete_audio = ExtResource("2_ferdl")
+request_complete_audio = ExtResource("3_3wdui")
+hurt_audio = ExtResource("4_j6sb0")
 
 [node name="KingMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
@@ -113,7 +121,16 @@ libraries = {
 "": SubResource("AnimationLibrary_rl4tu")
 }
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+
+[node name="HurtBox" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HurtBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.07467, 0)
+shape = SubResource("BoxShape3D_4gotb")
+
 [connection signal="body_entered" from="KingMesh/Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="KingMesh/Area3D" to="KingMesh/Area3D" method="_on_body_entered"]
 [connection signal="body_exited" from="KingMesh/Area3D" to="." method="_on_area_3d_body_exited"]
 [connection signal="body_exited" from="KingMesh/Area3D" to="KingMesh/Area3D" method="_on_body_exited"]
+[connection signal="body_entered" from="HurtBox" to="." method="_on_hurt_box_body_entered"]
