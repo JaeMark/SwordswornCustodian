@@ -27,8 +27,8 @@
 [ext_resource type="PackedScene" uid="uid://cl8a1k45gfthe" path="res://Objects/SeigeWeapons/siege_tower.tscn" id="26_d7ri8"]
 [ext_resource type="PackedScene" uid="uid://cwb3wy2w8r2tw" path="res://Objects/SeigeWeapons/siege_ram.tscn" id="27_lwjwl"]
 [ext_resource type="PackedScene" uid="uid://c0q0e5wiuixo0" path="res://Objects/SeigeWeapons/siege_ballista.tscn" id="27_sdf3l"]
-[ext_resource type="ArrayMesh" uid="uid://de11jvwcpjbpp" path="res://Assets/Models/flagBlue.obj" id="28_vc1dm"]
 [ext_resource type="PackedScene" uid="uid://c2hrb564nyb2y" path="res://Maps/KillZone.tscn" id="29_8aad0"]
+[ext_resource type="PackedScene" uid="uid://cdm6y10fh1tah" path="res://Objects/Checkpoint.tscn" id="29_ab6u8"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_n541q"]
 size = Vector3(100, 1, 100)
@@ -229,24 +229,20 @@ transform = Transform3D(0.989555, 0.113597, 0.0887461, -0.12418, 0.984405, 0.124
 [node name="wallStud2" parent="." instance=ExtResource("12_886jp")]
 transform = Transform3D(-0.0852056, 0.270513, -0.958938, 0.0334767, 0.962672, 0.268592, 0.995801, -0.00921644, -0.0910808, 33.9538, 0.0597692, -34.8449)
 
-[node name="FlagBlue" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 49, 13, 24)
-mesh = ExtResource("28_vc1dm")
-
-[node name="FlagBlue2" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 49, 13, -37)
-mesh = ExtResource("28_vc1dm")
-
-[node name="FlagBlue3" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -21, 13, 25)
-mesh = ExtResource("28_vc1dm")
-
-[node name="FlagBlue4" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -11, 13, -36)
-mesh = ExtResource("28_vc1dm")
-
 [node name="KillZone" parent="." instance=ExtResource("29_8aad0")]
 transform = Transform3D(150, 0, 0, 0, 5, 0, 0, 0, 150, 17, -9, -6)
+
+[node name="Checkpoint" parent="." instance=ExtResource("29_ab6u8")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 49, 13, 24)
+
+[node name="Checkpoint2" parent="." instance=ExtResource("29_ab6u8")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -21, 13, 25)
+
+[node name="Checkpoint3" parent="." instance=ExtResource("29_ab6u8")]
+transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, -11, 13, -36)
+
+[node name="Checkpoint4" parent="." instance=ExtResource("29_ab6u8")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 49, 13, -36)
 
 [connection signal="collectable_collected" from="Player" to="Hud" method="_on_player_collectable_collected"]
 [connection signal="submit_collectables" from="Player" to="King" method="_on_player_submit_collectables"]

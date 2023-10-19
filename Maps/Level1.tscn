@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://djdmk3cti26d8" path="res://Collectables/RedShield.tscn" id="4_d36h0"]
 [ext_resource type="PackedScene" uid="uid://dwc32eg7otd3g" path="res://HUD/Hud.tscn" id="5_ptwgn"]
 [ext_resource type="PackedScene" uid="uid://cs5e14efng25y" path="res://NPCs/King.tscn" id="6_mk4aw"]
-[ext_resource type="PackedScene" uid="uid://dwpekdxyfgh4d" path="res://Objects/gate.tscn" id="7_t10hw"]
+[ext_resource type="PackedScene" uid="uid://dwpekdxyfgh4d" path="res://Objects/Gate.tscn" id="7_t10hw"]
 [ext_resource type="PackedScene" uid="uid://i0mon8pxxi5n" path="res://Objects/Walls/wall_narrow_wood_fence.tscn" id="8_p3own"]
 [ext_resource type="PackedScene" uid="uid://85m4h0h1o0g0" path="res://Objects/Walls/wall_narrow_stairs.tscn" id="10_2xdkn"]
 [ext_resource type="PackedScene" uid="uid://ci6ay11i0qqvv" path="res://Objects/Walls/wall_corner_half_tower.tscn" id="10_sc284"]
@@ -27,7 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://d2d1u4tje3h5k" path="res://Objects/Tower/tower_balcony.tscn" id="25_do85s"]
 [ext_resource type="PackedScene" uid="uid://bevm5txcxorfr" path="res://Objects/Tower/tower_top_roof.tscn" id="26_jra7w"]
 [ext_resource type="PackedScene" uid="uid://c0q0e5wiuixo0" path="res://Objects/SeigeWeapons/siege_ballista.tscn" id="27_is5fa"]
-[ext_resource type="PackedScene" uid="uid://bl3uhqc2biyik" path="res://Maps/LevelSwitcher.tscn" id="28_64lef"]
+[ext_resource type="PackedScene" uid="uid://bl3uhqc2biyik" path="res://Objects/LevelSwitcher.tscn" id="28_64lef"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_n541q"]
 size = Vector3(100, 1, 100)
