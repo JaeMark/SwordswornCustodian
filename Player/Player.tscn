@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://chordaknnkt4w"]
+[gd_scene load_steps=8 format=3 uid="uid://chordaknnkt4w"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerController.gd" id="1_dpykx"]
 [ext_resource type="ArrayMesh" uid="uid://bh445wve3eqta" path="res://Assets/Models/knightBlue.obj" id="1_y1rqk"]
+[ext_resource type="AudioStream" uid="uid://djfl3jyxbyifp" path="res://Assets/Audio/check_point_set.mp3" id="2_hmh17"]
+[ext_resource type="AudioStream" uid="uid://ccfme4py6btne" path="res://Assets/Audio/kill_zone.mp3" id="3_tlqe0"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6fyx4"]
 radius = 2.0
@@ -26,7 +28,8 @@ _data = {
 [node name="Player" type="CharacterBody3D" groups=["Player"]]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.129068, 0)
 script = ExtResource("1_dpykx")
-speed = 15.0
+check_point_audio = ExtResource("2_hmh17")
+death_audio = ExtResource("3_tlqe0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.10866, 0)
@@ -46,3 +49,5 @@ reset_on_save = false
 libraries = {
 "": SubResource("AnimationLibrary_0lnor")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

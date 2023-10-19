@@ -11,12 +11,16 @@ signal submit_collectables(num_blue_shield : int, num_red_shield : int, num_swor
 @export var camera_lag = 0.1
 @export var dash_speed_multiplier = 4.0
 
+@export var check_point_audio : AudioStream
+@export var death_audio : AudioStream
+
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 @onready var spring_arm = $SpringArm3D
 @onready var model = $KnightBlue
 @onready var animation_tree = $AnimationTree
 @onready var animation_player = $AnimationPlayer
+@onready var audio_player = $AudioStreamPlayer
 
 var target_rotation = 0.0
 var target_spring_rotation = 0.0
@@ -91,9 +95,14 @@ func _physics_process(delta):
 	move_and_slide()
 
 func set_spawn_point(checkpoint_location : Vector3):
-	spawn_location = checkpoint_location
+	if checkpoint_location != spawn_location:
+		audio_player.stream = check_point_audio
+		audio_player.play()
+		spawn_location = checkpoint_location
 	
 func teleport_to_checkpoint():
+	audio_player.stream = death_audio
+	audio_player.play()
 	self.position = spawn_location
 
 func on_collect_collectable(collectableType : Collectable.CollectableType):
