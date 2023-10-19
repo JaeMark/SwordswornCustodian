@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://iijvoihwv5bw"]
+[gd_scene load_steps=36 format=3 uid="uid://iijvoihwv5bw"]
 
 [ext_resource type="PackedScene" uid="uid://chordaknnkt4w" path="res://Player/Player.tscn" id="1_h2jgr"]
 [ext_resource type="PackedScene" uid="uid://dwc32eg7otd3g" path="res://HUD/Hud.tscn" id="2_87hap"]
@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://c2hrb564nyb2y" path="res://Objects/KillZone.tscn" id="29_8aad0"]
 [ext_resource type="PackedScene" uid="uid://cdm6y10fh1tah" path="res://Objects/Checkpoint.tscn" id="29_ab6u8"]
 [ext_resource type="PackedScene" uid="uid://30rhoqk7vly0" path="res://Objects/bridge.tscn" id="30_vjvta"]
+[ext_resource type="PackedScene" uid="uid://bl3uhqc2biyik" path="res://Objects/LevelSwitcher.tscn" id="31_pfh46"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_n541q"]
 size = Vector3(100, 1, 100)
@@ -50,6 +51,7 @@ max_jump_height = 3.5
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.422618, -0.694272, 0.582563, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 0, 0)
+visible = false
 shadow_enabled = true
 shadow_opacity = 0.75
 
@@ -286,6 +288,10 @@ physics_material_override = SubResource("PhysicsMaterial_xhqu6")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 13, 6)
 shape = SubResource("BoxShape3D_s6i37")
+
+[node name="LevelSwitcher" parent="." instance=ExtResource("31_pfh46")]
+transform = Transform3D(3.78, 0, 0, 0, 1, 0, 0, 0, 4.9, 4, 1, -40)
+next_scene_path = "res://Maps/Level1.tscn"
 
 [connection signal="collectable_collected" from="Player" to="Hud" method="_on_player_collectable_collected"]
 [connection signal="submit_collectables" from="Player" to="King" method="_on_player_submit_collectables"]
