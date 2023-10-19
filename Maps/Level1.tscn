@@ -245,8 +245,9 @@ transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 39, 13, 
 
 [node name="BGMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("32_3dp6i")
-volume_db = -10.0
+volume_db = -20.0
 autoplay = true
+mix_target = 2
 
 [connection signal="collectable_collected" from="Player" to="Hud" method="_on_player_collectable_collected"]
 [connection signal="submit_collectables" from="Player" to="King" method="_on_player_submit_collectables"]

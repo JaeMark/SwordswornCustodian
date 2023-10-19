@@ -1,7 +1,7 @@
 extends Node3D
 
 @onready var animation_player = $AnimationPlayer
-@onready var audio_player = $AudioStreamPlayer
+@onready var audio_player = $AudioStreamPlayer3D
 
 func _open_gate():
 	animation_player.play("gate_open")
