@@ -27,7 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://cl8a1k45gfthe" path="res://Objects/SeigeWeapons/siege_tower.tscn" id="26_d7ri8"]
 [ext_resource type="PackedScene" uid="uid://cwb3wy2w8r2tw" path="res://Objects/SeigeWeapons/siege_ram.tscn" id="27_lwjwl"]
 [ext_resource type="PackedScene" uid="uid://c0q0e5wiuixo0" path="res://Objects/SeigeWeapons/siege_ballista.tscn" id="27_sdf3l"]
-[ext_resource type="PackedScene" uid="uid://c2hrb564nyb2y" path="res://Maps/KillZone.tscn" id="29_8aad0"]
+[ext_resource type="PackedScene" uid="uid://c2hrb564nyb2y" path="res://Objects/KillZone.tscn" id="29_8aad0"]
 [ext_resource type="PackedScene" uid="uid://cdm6y10fh1tah" path="res://Objects/Checkpoint.tscn" id="29_ab6u8"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_n541q"]

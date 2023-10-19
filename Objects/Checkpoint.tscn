@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://cdm6y10fh1tah"]
 
 [ext_resource type="ArrayMesh" uid="uid://de11jvwcpjbpp" path="res://Assets/Models/flagBlue.obj" id="1_848af"]
-[ext_resource type="Script" path="res://Objects/Checkpoint.gd" id="1_pkxwx"]
+[ext_resource type="Script" path="res://Scripts/Checkpoint.gd" id="1_ftiny"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3jwjf"]
 size = Vector3(10, 3, 10)
 
 [node name="Checkpoint" type="Area3D"]
-script = ExtResource("1_pkxwx")
+script = ExtResource("1_ftiny")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_848af")

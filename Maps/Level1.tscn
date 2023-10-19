@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bigohgss0sb1m"]
+[gd_scene load_steps=34 format=3 uid="uid://bigohgss0sb1m"]
 
 [ext_resource type="PackedScene" uid="uid://chordaknnkt4w" path="res://Player/Player.tscn" id="1_q2bx6"]
 [ext_resource type="PackedScene" uid="uid://2nomv2ixafjf" path="res://Collectables/Sword.tscn" id="2_mr0f7"]
@@ -28,6 +28,9 @@
 [ext_resource type="PackedScene" uid="uid://bevm5txcxorfr" path="res://Objects/Tower/tower_top_roof.tscn" id="26_jra7w"]
 [ext_resource type="PackedScene" uid="uid://c0q0e5wiuixo0" path="res://Objects/SeigeWeapons/siege_ballista.tscn" id="27_is5fa"]
 [ext_resource type="PackedScene" uid="uid://bl3uhqc2biyik" path="res://Objects/LevelSwitcher.tscn" id="28_64lef"]
+[ext_resource type="PackedScene" uid="uid://c2hrb564nyb2y" path="res://Objects/KillZone.tscn" id="29_2r2bt"]
+[ext_resource type="PackedScene" uid="uid://30rhoqk7vly0" path="res://Objects/bridge.tscn" id="30_xcgow"]
+[ext_resource type="PackedScene" uid="uid://cdm6y10fh1tah" path="res://Objects/Checkpoint.tscn" id="31_fp8iq"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_n541q"]
 size = Vector3(100, 1, 100)
@@ -193,8 +196,18 @@ transform = Transform3D(-1.63913e-07, 0, -1, 0, 1, 0, 1, 0, -1.63913e-07, 44, 13
 [node name="towerTopCorner3" parent="." instance=ExtResource("24_fnu64")]
 transform = Transform3D(1, 0, -1.20201e-07, 0, 1, 0, 1.20201e-07, 0, 1, -16, 13, -41)
 
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.19631, 0, 0, 0, 1, 0, 0, 0, 0.0836352, 25.148, 0, 21.248)
+mesh = SubResource("BoxMesh_n541q")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_85nwj")
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.65, 0, 0, 0, 1, 0, 0, 0, 0.8, 11, 0, 0)
+transform = Transform3D(0.572, 0, 0, 0, 1, 0, 0, 0, 0.528, 9, 0, -9)
 mesh = SubResource("BoxMesh_n541q")
 skeleton = NodePath("")
 
@@ -209,6 +222,24 @@ transform = Transform3D(0.459921, 0, -0.88796, 0.112798, 0.991899, 0.0584237, 0.
 [node name="LevelSwitcher" parent="." instance=ExtResource("28_64lef")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4, 3, -38)
 next_scene_path = "res://Maps/Level2.tscn"
+
+[node name="KillZone2" parent="." instance=ExtResource("29_2r2bt")]
+transform = Transform3D(23, 0, 0, 0, 2, 0, 0, 0, 18, 4, 7, -44)
+
+[node name="KillZone" parent="." instance=ExtResource("29_2r2bt")]
+transform = Transform3D(150, 0, 0, 0, 10, 0, 0, 0, 150, 0, -8, 0)
+
+[node name="bridge" parent="." instance=ExtResource("30_xcgow")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4, 0, -45)
+
+[node name="bridge2" parent="." instance=ExtResource("30_xcgow")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 4, 0, -45)
+
+[node name="Checkpoint" parent="." instance=ExtResource("31_fp8iq")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -21, 13, -36)
+
+[node name="Checkpoint2" parent="." instance=ExtResource("31_fp8iq")]
+transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 39, 13, 34)
 
 [connection signal="collectable_collected" from="Player" to="Hud" method="_on_player_collectable_collected"]
 [connection signal="submit_collectables" from="Player" to="King" method="_on_player_submit_collectables"]
