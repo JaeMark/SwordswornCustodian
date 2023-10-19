@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://chordaknnkt4w" path="res://Player/Player.tscn" id="1_h2jgr"]
 [ext_resource type="PackedScene" uid="uid://dwc32eg7otd3g" path="res://HUD/Hud.tscn" id="2_87hap"]
 [ext_resource type="PackedScene" uid="uid://cs5e14efng25y" path="res://NPCs/King.tscn" id="3_vek8t"]
-[ext_resource type="PackedScene" uid="uid://dwpekdxyfgh4d" path="res://Objects/gate.tscn" id="4_nc5bj"]
+[ext_resource type="PackedScene" uid="uid://dwpekdxyfgh4d" path="res://Objects/Gate.tscn" id="4_nc5bj"]
 [ext_resource type="PackedScene" uid="uid://djdmk3cti26d8" path="res://Collectables/RedShield.tscn" id="5_2patq"]
 [ext_resource type="PackedScene" uid="uid://2nomv2ixafjf" path="res://Collectables/Sword.tscn" id="6_t1vv2"]
 [ext_resource type="PackedScene" uid="uid://cot8b6v6337jx" path="res://Collectables/BlueShield.tscn" id="7_1bbw4"]
@@ -176,8 +176,18 @@ transform = Transform3D(1, 0, -1.20202e-07, 0, 1, 0, 1.20202e-07, 0, 1, -6, 13, 
 [node name="towerTopCorner3" parent="." instance=ExtResource("24_8jv1s")]
 transform = Transform3D(1.63913e-07, 0, 1, 0, 1, 0, -1, 0, 1.63913e-07, -26, 13, 20)
 
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.11926, 0, 0, 0, 1, 0, 0, 0, 0.22268, -13.5655, 0, 11.5539)
+mesh = SubResource("BoxMesh_n541q")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_85nwj")
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.8, 0, 0, 0, 1, 0, 0, 0, 0.72, 15, 0, -6)
+transform = Transform3D(0.546031, 0, 0, 0, 1, 0, 0, 0, 0.589862, 19.6856, 0, -6.57046)
 mesh = SubResource("BoxMesh_n541q")
 skeleton = NodePath("")
 
@@ -235,29 +245,8 @@ mesh = ExtResource("28_vc1dm")
 transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -11, 13, -36)
 mesh = ExtResource("28_vc1dm")
 
-[node name="KillZone" parent="." node_paths=PackedStringArray("spawn_point") instance=ExtResource("29_8aad0")]
-transform = Transform3D(37.8, 0, 0, 0, 4.704, 0, 0, 0, 93.24, 68, 4, -6)
-spawn_point = NodePath("../FlagBlue")
-
-[node name="KillZone2" parent="." node_paths=PackedStringArray("spawn_point") instance=ExtResource("29_8aad0")]
-transform = Transform3D(-1.29429e-06, 0, -102.564, 0, 4.704, 0, 29.61, 0, -4.48321e-06, 36, 4, 43)
-spawn_point = NodePath("../FlagBlue")
-
-[node name="KillZone3" parent="." node_paths=PackedStringArray("spawn_point") instance=ExtResource("29_8aad0")]
-transform = Transform3D(-35.28, 0, 7.5318e-06, 0, 4.704, 0, -3.08428e-06, 0, -86.1537, -28, 4, 16)
-spawn_point = NodePath("../FlagBlue3")
-
-[node name="KillZone4" parent="." node_paths=PackedStringArray("spawn_point") instance=ExtResource("29_8aad0")]
-transform = Transform3D(-32.76, 0, 3.58514e-06, 0, 4.704, 0, -2.86397e-06, 0, -41.0092, -23, 4, -47)
-spawn_point = NodePath("../FlagBlue4")
-
-[node name="KillZone5" parent="." node_paths=PackedStringArray("spawn_point") instance=ExtResource("29_8aad0")]
-transform = Transform3D(5.94825e-06, 0, 60.3076, 0, 4.704, 0, -45.36, 0, 7.90839e-06, 57, 4, -59)
-spawn_point = NodePath("../FlagBlue2")
-
-[node name="KillZone6" parent="." node_paths=PackedStringArray("spawn_point") instance=ExtResource("29_8aad0")]
-transform = Transform3D(3.85149e-06, 0, 44.2256, 0, 1.4112, 0, -29.3706, 0, 5.79948e-06, 3, 10, -50)
-spawn_point = NodePath("../FlagBlue4")
+[node name="KillZone" parent="." instance=ExtResource("29_8aad0")]
+transform = Transform3D(150, 0, 0, 0, 5, 0, 0, 0, 150, 17, -9, -6)
 
 [connection signal="collectable_collected" from="Player" to="Hud" method="_on_player_collectable_collected"]
 [connection signal="submit_collectables" from="Player" to="King" method="_on_player_submit_collectables"]

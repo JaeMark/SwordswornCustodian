@@ -26,8 +26,10 @@ var blue_shield_collected = 0
 var red_shield_collected = 0
 var sword_collected = 0
 
+var spawn_location : Vector3
+
 func _ready():
-	pass
+	spawn_location = self.position
 
 func _physics_process(delta):
 	if not is_on_floor() and not is_jumping:
@@ -46,9 +48,8 @@ func _physics_process(delta):
 			velocity.y = 0
 			is_jumping = false
 	
-	handle_movement_input(delta)
+	_handle_movement_input(delta)
 	
-
 	var input_dir = Input.get_vector("left", "right", "forward", "back")
 
 	if input_dir.x != 0:
@@ -57,8 +58,6 @@ func _physics_process(delta):
 
 	spring_arm.rotation.y = lerp_angle(spring_arm.rotation.y, target_spring_rotation, camera_lag)
 	
-
-		
 	# Handle interact input
 	if Input.is_action_just_released("interact"):
 		submit_collectables.emit(blue_shield_collected, red_shield_collected, sword_collected)
@@ -67,14 +66,11 @@ func _physics_process(delta):
 	
 	# Handle walk animation
 	if is_on_floor() and input_dir.x != 0 || input_dir.y !=  0:
-		print("hello")
 		animation_player.play("Walk")
-		#animation_tree["parameters/conditions/is_walking"] = true
 	else:
 		animation_player.stop()
-		#animation_tree["parameters/conditions/is_walking"] = false
 
-func handle_movement_input(delta):
+func _handle_movement_input(delta):
 	var input_dir = Input.get_vector("left", "right", "forward", "back")
 
 	var direction = Vector3(0, 0, 1).rotated(Vector3.UP, model.rotation.y)
@@ -82,6 +78,12 @@ func handle_movement_input(delta):
 	var velocity_y = velocity.y;
 	velocity = lerp(velocity, direction * input_dir.y * speed, acceleration * delta)
 	velocity.y = velocity_y
+
+func set_spawn_point(checkpoint_location : Vector3):
+	spawn_location = checkpoint_location
+	
+func teleport_to_checkpoint():
+	self.position = spawn_location
 
 func on_collect_collectable(collectableType : Collectable.CollectableType):
 	match collectableType:
