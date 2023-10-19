@@ -37,11 +37,6 @@ func _on_area_3d_body_exited(body):
 	if body.is_in_group("Player"):
 		is_player_in_sight = false
 
-func _on_player_interact_input_pressed():
-	if is_player_in_sight and is_request_fulfilled:
-		# Request has been fulfilled; open the gate
-		open_gate.emit()
-
 func _on_player_submit_collectables(num_blue_shield, num_red_shield, num_sword):
 	is_request_fulfilled = num_blue_shield >= required_blue_shield and num_red_shield >= required_red_shield and num_sword >= required_sword
 	if is_player_in_sight and is_request_fulfilled:
@@ -49,6 +44,7 @@ func _on_player_submit_collectables(num_blue_shield, num_red_shield, num_sword):
 
 func handle_successful_cleanup():
 	animation_player.play("cheer")
+	open_gate.emit()
 	
 	king_request_ui.visible = false
 	king_submit_ui.visible = false
