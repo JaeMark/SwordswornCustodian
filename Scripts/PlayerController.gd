@@ -3,12 +3,13 @@ extends CharacterBody3D
 signal collectable_collected(collectbaleType : Collectable.CollectableType, num_collected : int)
 signal submit_collectables(num_blue_shield : int, num_red_shield : int, num_sword : int)
 
-@export var speed = 20.0
+@export var speed = 10.0
 @export var acceleration = 5.0
 @export var jump_speed = 10.0
 @export var max_jump_height = 5.0 
 @export var rotation_speed = 3.0
 @export var camera_lag = 0.1
+@export var dash_speed_multiplier = 4.0
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -21,6 +22,7 @@ var target_rotation = 0.0
 var target_spring_rotation = 0.0
 var jump_start_height = 0.0
 var is_jumping = false
+var is_dashing = false
 
 var blue_shield_collected = 0
 var red_shield_collected = 0
@@ -49,6 +51,18 @@ func _physics_process(delta):
 		if jump_height >= max_jump_height:
 			velocity.y = 0
 			is_jumping = false
+	
+	# Handle dash input
+	if Input.is_action_pressed("dash") and not is_dashing:
+		is_dashing = true
+		# Increase speed during dash
+		speed *= dash_speed_multiplier  # You can adjust this factor as needed
+
+	if is_dashing and !Input.is_action_pressed("dash"):
+		is_dashing = false
+		# Reset speed back to normal
+		speed /= dash_speed_multiplier
+
 	
 	# Get input for movement
 	var input = Input.get_vector("left", "right", "forward", "back")
